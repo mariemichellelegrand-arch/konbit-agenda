@@ -71,6 +71,86 @@
 .card img{aspect-ratio:4/5;object-fit:cover;width:100%;display:block;}
 </style>
 
+
+<style>
+/* === DISCOVER SHELL === */
+.discover-shell{
+  padding:28px;
+  border-radius:32px;
+  background:linear-gradient(180deg,rgba(255,255,255,.97),rgba(255,255,255,.93)),radial-gradient(circle at top left,rgba(242,194,48,.10),transparent 28%);
+  border:1px solid rgba(19,33,63,.08);
+  box-shadow:0 24px 60px rgba(19,33,63,.08);
+}
+.discover-head{max-width:860px;margin-bottom:22px;}
+.discover-kicker{display:inline-flex;align-items:center;min-height:30px;padding:0 12px;border-radius:999px;background:#f8f7f3;border:1px solid var(--line);font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.discover-head h3{margin:0;font-family:'Cormorant Garamond',serif;font-size:52px;line-height:1.02;color:var(--blue-deep);letter-spacing:-.02em;}
+.discover-head p{margin:14px 0 0;max-width:760px;font-size:16px;line-height:1.8;color:var(--muted);}
+.discover-search{display:flex;align-items:center;gap:12px;min-height:72px;padding:0 20px;background:#fff;border:1px solid rgba(19,33,63,.10);border-radius:22px;box-shadow:0 10px 28px rgba(19,33,63,.05);margin-bottom:18px;}
+.search-icon{font-size:22px;color:var(--blue-deep);opacity:.7;}
+.discover-search input{border:none;outline:none;width:100%;background:transparent;font-size:20px;color:var(--text);}
+.discover-search input::placeholder{color:#8b93a7;}
+.discover-topics{display:flex;gap:12px;flex-wrap:wrap;}
+.topic-chip{min-height:48px;padding:0 18px;border-radius:999px;border:1px solid rgba(19,33,63,.10);background:#fff;font-size:11px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:var(--blue-deep);cursor:pointer;transition:.2s;}
+.topic-chip:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(19,33,63,.08);}
+.topic-chip.active{background:var(--blue-deep);color:#fff;border-color:var(--blue-deep);}
+.discover-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(19,33,63,.12),transparent);margin:22px 0;}
+.discover-advanced{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;align-items:end;}
+.discover-reset{display:flex;align-items:flex-end;}
+.discover-advanced .field label{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block;}
+.discover-advanced .field select{width:100%;height:52px;border-radius:16px;border:1px solid rgba(19,33,63,.10);background:#fff;padding:0 14px;color:var(--text);outline:none;font-family:inherit;}
+.discover-advanced .field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,56,190,.10);}
+/* Gold line accent */
+.discover-shell{position:relative;}
+.discover-shell::before{content:"";position:absolute;top:-1px;left:28px;width:40px;height:3px;background:var(--gold);border-radius:2px;}
+@media(max-width:1100px){
+  .discover-head h3{font-size:42px;}
+  .discover-advanced{grid-template-columns:1fr 1fr;}
+  .discover-reset{grid-column:1/-1;}
+}
+@media(max-width:820px){
+  .discover-shell{padding:20px;border-radius:24px;}
+  .discover-head h3{font-size:30px;line-height:1.1;}
+  .discover-head p{font-size:14px;line-height:1.7;}
+  .discover-search{min-height:58px;padding:0 14px;border-radius:16px;}
+  .discover-search input{font-size:15px;}
+  .topic-chip{min-height:42px;padding:0 14px;font-size:10px;}
+  .discover-advanced{grid-template-columns:1fr;}
+}
+</style>
+
+<style>
+/* === CALENDRIER CORRIGÉ === */
+.cal-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px;}
+.cal-title{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--blue-deep);line-height:1.05;}
+.calendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;width:100%;min-width:0;}
+.weekday{padding:6px 2px;text-align:center;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);min-width:0;}
+.day{min-height:104px;min-width:0;background:#fafaf8;border:1px solid rgba(19,33,63,.06);border-radius:16px;padding:7px;display:flex;flex-direction:column;gap:6px;overflow:hidden;}
+.day.other{opacity:.35;}
+.day.today{outline:2px solid var(--blue);outline-offset:2px;background:#fff;}
+.day.symbolic{background:linear-gradient(135deg,#fff9e8,#fff);border-color:rgba(242,194,48,.30);}
+.day.has{cursor:pointer;background:linear-gradient(135deg,#eef2ff,#fff);border-color:rgba(23,56,190,.18);}
+.day.has:hover{background:linear-gradient(135deg,#dde5ff,#f0f4ff);transform:translateY(-1px);transition:.15s;}
+.day.selected{outline:3px solid var(--gold);outline-offset:2px;background:#fff;box-shadow:0 10px 24px rgba(242,194,48,.16);}
+.dnum{font-size:13px;font-weight:800;color:var(--blue-deep);min-width:0;}
+.dots{display:flex;flex-wrap:wrap;gap:4px;min-width:0;}
+.dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;}
+.mini{font-size:10px;line-height:1.35;padding:5px 6px;border-radius:10px;background:#eef2ff;color:var(--blue);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;min-width:0;}
+.day-count{margin-left:auto;width:22px;height:22px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;background:var(--blue);color:#fff;flex:0 0 auto;}
+.day-count.busy{background:var(--red);animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+.legend span{display:inline-flex;align-items:center;gap:6px;}
+.sw{width:10px;height:10px;border-radius:50%;}
+@media(max-width:1100px){.calendar{gap:5px;}}
+@media(max-width:820px){
+  .calendar{gap:5px;}
+  .day{min-height:72px;padding:5px;}
+  .mini{display:none;}
+  .cal-title{font-size:24px;}
+  .dnum{font-size:11px;}
+}
+</style>
+
 </head>
 <body>
 <style>
@@ -733,7 +813,8 @@ padding:18px 0;
 background:#fff;
 border:1px solid var(--line);
 border-radius:26px;
-box-shadow:var(--shadow);
+box-shadow:var(--shadow);overflow:hidden;
+overflow:hidden;
 }
 
 .panel-pad{
@@ -903,43 +984,50 @@ gap:5px;
 <section class="section" id="agenda">
   <div class="wrap">
     <div class="promo-bar">
-      <span class="promo-item">🗓 <strong>222</strong> événements communautaires</span>
+      <span class="promo-item">🗓 <strong>222</strong> rendez-vous référencés</span>
       <span class="promo-sep">·</span>
-      <span class="promo-item">📍 France métropolitaine</span>
+      <span class="promo-item">📍 France entière</span>
       <span class="promo-sep">·</span>
-      <span class="promo-item"><a href="#soumettre" style="color:var(--blue);font-weight:800">Publiez votre événement</a></span>
+      <span class="promo-item"><a href="#soumettre" style="color:var(--blue);font-weight:800">Publier sur Konbit</a></span>
       <span class="promo-sep">·</span>
       <span class="promo-item"><a href="#partenaires" style="color:var(--blue);font-weight:800">Visibilité premium</a></span>
-      <span class="promo-sep">·</span>
-      <span class="promo-item"><a href="#soumettre" style="color:var(--blue);font-weight:800">Billetterie intégrée</a></span>
     </div>
 
+    <div class="discover-shell panel">
+      <div class="discover-head">
+        <div class="discover-kicker">Navigation éditoriale</div>
+        <h3>Parcourir la scène haïtienne en France</h3>
+        <p>Soirées, culture, rencontres, business, événements engagés et temps forts de la communauté : explorez la programmation comme une sélection.</p>
+      </div>
 
-    <!-- Navigation mois luxe -->
-    <div class="month-luxury-nav" id="monthLuxuryNav"></div>
-    <div class="panel panel-pad filters">
-      <h3>Découvrir la programmation communautaire</h3>
-      <div class="sub">Recherche, filtres, calendrier, carte interactive et fiches événements.</div>
+      <div class="discover-search">
+        <div class="search-icon">⌕</div>
+        <input id="search" type="text" placeholder="Konpa, gala, conférence, Paris…">
+      </div>
 
-      <div class="filters-grid">
+      <div class="discover-topics">
+        <button class="topic-chip active" data-quick="all">Toute la programmation</button>
+        <button class="topic-chip" data-quick="weekend">Sélection week-end</button>
+        <button class="topic-chip" data-quick="free">Accès libre</button>
+        <button class="topic-chip" data-quick="entrepreneur">Business &amp; projets</button>
+        <button class="topic-chip" data-quick="haiti">Temps forts haïtiens</button>
+      </div>
+
+      <div class="discover-divider"></div>
+
+      <div class="discover-advanced">
         <div class="field">
-          <label>Recherche</label>
-          <input id="search" type="text" placeholder="Ex. konpa, gala, entrepreneuriat, Paris…">
-        </div>
-
-        <div class="field">
-          <label>Année</label>
+          <label>Période</label>
           <select id="year">
-            <option value="all">Toutes</option>
+            <option value="all">Toutes les années</option>
             <option value="2026">2026</option>
             <option value="2027">2027</option>
           </select>
         </div>
-
         <div class="field">
-          <label>Catégorie</label>
+          <label>Univers</label>
           <select id="category">
-            <option value="all">Toutes</option>
+            <option value="all">Tous les univers</option>
             <option value="culture">Culture</option>
             <option value="musique">Musique</option>
             <option value="gastronomie">Gastronomie</option>
@@ -949,32 +1037,24 @@ gap:5px;
             <option value="conference">Conférence</option>
           </select>
         </div>
-
         <div class="field">
-          <label>Ville</label>
+          <label>Localisation</label>
           <select id="city">
-            <option value="all">Toutes</option>
+            <option value="all">Toute la France</option>
           </select>
         </div>
-
         <div class="field">
-          <label>Statut</label>
+          <label>Type</label>
           <select id="status">
             <option value="all">Tous</option>
             <option value="published">Publié</option>
             <option value="recurring">Récurrent</option>
-            <option value="watch">Veille 2027</option>
+            <option value="watch">À suivre</option>
           </select>
         </div>
-      </div>
-
-      <div class="quick">
-        <button class="chip active" data-quick="all">Tout voir</button>
-        <button class="chip" data-quick="weekend">Week-end</button>
-        <button class="chip" data-quick="free">Gratuit</button>
-        <button class="chip" data-quick="entrepreneur">Entrepreneuriat</button>
-        <button class="chip" data-quick="haiti">Dates haïtiennes</button>
-        <button class="chip" id="reset">Réinitialiser</button>
+        <div class="discover-reset">
+          <button class="btn btn-outline" id="reset">Réinitialiser</button>
+        </div>
       </div>
     </div>
   </div>
@@ -1216,7 +1296,7 @@ border-radius:50%;
         </div>
         <button class="month-nav-arrow" id="nextMonth">&#8594;</button>
       </div>
-      <input type="hidden" id="monthSelect" value="2026-03">
+      
       <div class="month-pills-track" id="monthPillsTrack">
         <!-- Générés par JS -->
       </div>
@@ -1447,20 +1527,15 @@ padding:0 16px;
       </div>
     </div>
   </section>
-<section class="section" id="events-section">
+<section class="section">
   <div class="wrap">
     <div class="list-head">
       <div>
-        <h3>Événements à l'affiche</h3>
+        <h3>La programmation complète</h3>
         <div class="sub" id="countText"></div>
       </div>
     </div>
-    <div class="events-layout">
-      <div id="eventFeature"></div>
-      <div id="eventSecondary"></div>
-      <div id="eventTimeline"></div>
-      <div class="grid" id="grid"></div>
-    </div>
+    <div class="grid" id="grid"></div>
   </div>
 </section>
 
@@ -2642,13 +2717,13 @@ window.addEventListener("DOMContentLoaded", function () {
     function reset(){
       el.search.value="";el.year.value="all";el.category.value="all";el.city.value="all";el.status.value="all";
       state.quick="all";
-      document.querySelectorAll("[data-quick]").forEach(b=>b.classList.remove("active"));
-      const a=document.querySelector('[data-quick="all"]');if(a) a.classList.add("active");
+      document.querySelectorAll(".topic-chip").forEach(b=>b.classList.remove("active"));
+      const a=document.querySelector('.topic-chip[data-quick="all"]');if(a) a.classList.add("active");
       apply();
     }
     initSelectedDay();populateCities();buildMonths();renderTrainings();apply();
     [el.search,el.year,el.category,el.city,el.status].forEach(n=>{n.addEventListener("input",apply);n.addEventListener("change",apply);});
-    document.querySelectorAll("[data-quick]").forEach(btn=>{btn.onclick=()=>{document.querySelectorAll("[data-quick]").forEach(b=>b.classList.remove("active"));btn.classList.add("active");state.quick=btn.dataset.quick;apply();};});
+    document.querySelectorAll(".topic-chip").forEach(btn=>{btn.onclick=()=>{document.querySelectorAll(".topic-chip").forEach(b=>b.classList.remove("active"));btn.classList.add("active");state.quick=btn.dataset.quick;apply();};});
     const rb=document.getElementById("reset");if(rb) rb.onclick=reset;
     const pm=document.getElementById("prevMonth");const nm=document.getElementById("nextMonth");
     if(pm) pm.onclick=()=>{const i=monthKeys.indexOf(state.currentMonth);state.currentMonth=monthKeys[Math.max(0,i-1)];const t=getTodayIso();state.selectedDay=t.startsWith(state.currentMonth)?t:null;buildMonths();apply();};

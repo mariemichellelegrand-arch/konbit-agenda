@@ -151,6 +151,12 @@
 }
 </style>
 
+
+<style>
+.konbit-ticket{background:linear-gradient(135deg,#f2c230,#ffe9a3);color:var(--blue-deep);font-weight:800;}
+.external-ticket{background:#eef2ff;color:#1738BE;}
+.info-ticket{background:#f3f4f6;color:#6b7280;}
+</style>
 </head>
 <body>
 <style>
@@ -992,6 +998,31 @@ gap:5px;
       <span class="promo-sep">·</span>
       <span class="promo-item"><a href="#partenaires" style="color:var(--blue);font-weight:800">Visibilité premium</a></span>
     </div>
+
+  <!-- BILLETTERIE KONBIT -->
+  <section class="section" id="billetterie-konbit">
+    <div class="wrap">
+      <div class="panel panel-pad" style="background:linear-gradient(135deg,#fffaf0,#ffffff);border:1px solid rgba(242,194,48,.35);overflow:visible">
+        <div style="display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:flex-start">
+          <div style="max-width:760px">
+            <div style="display:inline-flex;align-items:center;gap:8px;background:#fff7dd;border:1px solid rgba(242,194,48,.35);border-radius:999px;padding:7px 14px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:12px">
+              ✦ Billetterie Konbit — Nouveau
+            </div>
+            <h3 style="margin:0 0 10px;font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--blue-deep);line-height:1.05">
+              Une billetterie plus juste, plus directe, plus communautaire
+            </h3>
+            <p class="sub" style="max-width:720px">
+              Konbit Agency développe une solution de billetterie pensée pour les organisateurs et le public de la communauté haïtienne en France — une alternative plus accessible que les standards du marché. Le lancement commence avec <strong>Femme en Lumière</strong>, premier événement partenaire.
+            </p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <a href="#soumettre" class="btn btn-gold">Activer la billetterie</a>
+            <a href="#editorial-section" class="btn btn-outline">Voir l'événement partenaire</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
     <div class="discover-shell panel">
       <div class="discover-head">
@@ -2089,7 +2120,7 @@ display:block;
             </div>
 
             <div class="field">
-              <label>Lien billetterie / infos</label>
+              <label>Lien infos / réservation existante</label>
               <input type="url" placeholder="https://...">
             </div>
 
@@ -2104,7 +2135,28 @@ display:block;
             </div>
           </div>
 
-          <button type="submit" class="btn btn-gold">Envoyer la soumission</button>
+          
+        <div class="field">
+          <label>Billetterie souhaitée</label>
+          <select>
+            <option>Billetterie externe</option>
+            <option>Billetterie Konbit</option>
+            <option>À étudier avec Konbit</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Tarif d'entrée</label>
+          <input type="text" placeholder="Ex. 30 € / 50 € duo / gratuit">
+        </div>
+        <div class="field">
+          <label>Capacité</label>
+          <input type="text" placeholder="Ex. 120 places">
+        </div>
+        <div class="field">
+          <label>Référence partenaire Konbit</label>
+          <input type="text" placeholder="Ex. Femme en Lumière">
+        </div>
+        <button type="submit" class="btn btn-gold">Envoyer la soumission</button>
           <div class="success" id="success">✓ Soumission reçue. Notre équipe examinera votre événement et reviendra vers vous sous 48h.</div>
         </form>
       </div>
@@ -2401,20 +2453,20 @@ window.addEventListener("DOMContentLoaded", function () {
       "2027-05-18":[{title:"Fête du drapeau haïtien",category:"culture"}]
     };
     const baseEvents=[
-      {id:"e1",title:"Haitian Afterwork",date:"2026-01-31",city:"Paris",category:"business",location:"Lakay Madiba",price:"Billetterie en ligne",organizer:"Jeunesse Haïtienne de France",status:"published",poster:"https://data-prod.bizouk.com/events/flyers/11/49/80/resized/114980_6ea3e0d84fee06375633631b57677d29_800x600_auto_97.jpg",excerpt:"Networking, buffet haïtien et DJ set.",description:"Afterwork networking et culturel à Lakay Madiba.",link:"https://www.bizouk.com/events/details/haitian-afterwork/114980",lat:48.8691,lng:2.3556},
-      {id:"e2",title:"Haitian Carnival",date:"2026-02-19",city:"Paris",category:"musique",location:"Twenty One Sound Bar",price:"Billetterie en ligne",organizer:"Organisateur diaspora",status:"published",poster:"https://data-prod.bizouk.com/events/flyers/11/63/65/resized/116365_3b197a2554c88bb36aab5d1307727843_800x600_auto_97.jpg",excerpt:"Carnaval haïtien à Paris.",description:"Soirée carnaval, raboday, soca, afro et konpa à Paris.",link:"https://www.bizouk.com/events/details/haitian-carnival/116365",lat:48.8534,lng:2.3831},
-      {id:"e3",title:"Paris Sou Konpa Sware — Février",date:"2026-02-21",city:"Paris",category:"musique",location:"Temple du Swing",price:"Voir billetterie",organizer:"Paris Sou Konpa",status:"published",poster:"https://data-prod.bizouk.com/events/flyers/11/44/03/resized/114403_ff9e107d792857e905b9220a76f82e36_800x600_auto_97.jpg",excerpt:"Soirée mensuelle 100% konpa.",description:"Cours et soirée 100% konpa à Paris.",link:"https://www.bizouk.com/events/details/paris-sou-konpa-sware-edition-fevrier-20/114403",lat:48.8422,lng:2.3217},
-      {id:"e4",title:"Paris Sou Konpa Sware — Mars",date:"2026-03-14",city:"Paris",category:"musique",location:"Temple du Swing",price:"Voir billetterie",organizer:"Paris Sou Konpa",status:"published",poster:"https://data-prod.bizouk.com/events/flyers/11/44/04/resized/114404_7eadd91210bcc030e3d8062d37454983_800x600_auto_97.jpg",excerpt:"Cours puis soirée 100% konpa.",description:"Édition mars de Paris Sou Konpa.",link:"https://www.bizouk.com/events/details/paris-sou-konpa-sware-edition-mars-2026/114404",lat:48.8422,lng:2.3217},
-      {id:"e5",title:"Miss Prestige Haïti France 2026",date:"2026-03-21",city:"Nanterre",category:"culture",location:"Espace Chevreuil",price:"31,90 €",organizer:"AD Music / partenaire",status:"published",poster:"https://cdn.shopify.com/s/files/1/0079/5557/8943/files/FB_IMG_1773711153896.jpg?v=1773711309",excerpt:"Gala emblématique, culture et élégance.",description:"Soirée de gala emblématique de la diaspora haïtienne à Nanterre.",link:"https://www.ticketmaster.fr/fr/manifestation/miss-prestige-haiti-france-2026-billet/idmanif/649529",lat:48.8924,lng:2.2066},
-      {id:"e6",title:"Concert Dana-Jo pour Famille Kizito",date:"2026-03-27",city:"Bindernheim",category:"association",location:"Église Saint Ulrich",price:"2 €",organizer:"Famille Kizito Haïti France",status:"published",poster:"https://cdn.helloasso.com/img/photos/evenements/croppedimage-7a46b34bb58d40bf9631b73d336d2e0f.png",excerpt:"Concert solidaire au profit de Famille Kizito.",description:"Concert au profit d'actions éducatives et sociales liées à Haïti.",link:"https://www.helloasso.com/associations/famille-kizito-haiti-france/evenements/concert-dana-jo-a-bindernheim-27-03-2026",lat:48.2861,lng:7.6039},
-      {id:"e7",title:"Paris Sou Konpa Sosyal — Avril",date:"2026-04-12",city:"Paris",category:"musique",location:"Cyclone Studio",price:"10–15 €",organizer:"Paris Sou Konpa",status:"published",poster:"https://data-prod.bizouk.com/events/flyers/11/72/41/resized/117241_eee60b4974141b6057a5238f3df699fa_800x600_auto_97.jpg",excerpt:"Après-midi 100% konpa.",description:"Cours + social dancing 100% konpa à Cyclone Studio.",link:"https://www.bizouk.com/events/details/paris-sou-konpa-sosyal-edition-avril-202/117241",lat:48.8292,lng:2.3492},
-      {id:"e8",title:"Paris Sou Konpa Sware — Avril",date:"2026-04-25",city:"Paris",category:"musique",location:"Temple du Swing",price:"Voir billetterie",organizer:"Paris Sou Konpa",status:"published",poster:"https://data-prod.bizouk.com/events/flyers/11/44/04/resized/114404_7eadd91210bcc030e3d8062d37454983_800x600_auto_97.jpg",excerpt:"Édition avril de la soirée konpa.",description:"Édition avril de Paris Sou Konpa Sware.",link:"https://www.bizouk.com/events/details/paris-sou-konpa-sware-edition-avril-2026/116689",lat:48.8422,lng:2.3217},
-      {id:"e9",title:"Fête Nationale d'Haïti — Jour 1",date:"2026-05-16",city:"Perpignan",category:"culture",location:"10 Rue des Jardins-Saint-Louis",price:"25 € / 10 € / gratuit -8 ans",organizer:"Main dans la Main France Haïti",status:"published",poster:"https://cdn.helloasso.com/img/photos/evenements/croppedimage-74c7658bb4fb41c9af67f27c8ad30169.png",excerpt:"Culture haïtienne, repas et compas.",description:"Spectacle de danse traditionnelle, repas haïtien et soirée dansante.",link:"https://www.helloasso.com/associations/main-dans-la-main-france-haiti/evenements/fete-du-drapeau-haitien",lat:42.6887,lng:2.8948},
-      {id:"e10",title:"Fête Nationale d'Haïti — Jour 2",date:"2026-05-17",city:"Perpignan",category:"culture",location:"10 Rue des Jardins-Saint-Louis",price:"25 € / 10 € / gratuit -8 ans",organizer:"Main dans la Main France Haïti",status:"published",poster:"https://cdn.helloasso.com/img/photos/evenements/croppedimage-74c7658bb4fb41c9af67f27c8ad30169.png",excerpt:"Deuxième journée festive et culturelle.",description:"Suite de la fête nationale d'Haïti organisée à Perpignan.",link:"https://www.helloasso.com/associations/main-dans-la-main-france-haiti/evenements/fete-du-drapeau-haitien",lat:42.6887,lng:2.8948},
-      {id:"e11",title:"Naïka — Eclesia Tour · Salle Pleyel",date:"2026-03-08",city:"Paris",category:"musique",location:"Salle Pleyel",price:"45,50 – 69,70 €",organizer:"Live Nation",status:"published",poster:"https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80",excerpt:"Artiste franco-haïtienne, ECLESIA Tour à la Salle Pleyel.",description:"Naïka présente son album ECLESIA. Dimanche 8 mars, 20h.",link:"https://www.sallepleyel.com/evenement/naika/",lat:48.8765,lng:2.3005},
-      {id:"e12",title:"Finale Eloquentia 2026 — Haïti en scène",date:"2026-03-25",city:"Paris",category:"culture",location:"La Seine Musicale",price:"Voir billetterie",organizer:"Consulat Général d'Haïti à Paris",status:"published",poster:"https://cdn.shopify.com/s/files/1/0079/5557/8943/files/FB_IMG_1773712511694.jpg?v=1773714899",excerpt:"Abigail Alexandre représente Haïti en finale internationale d'Eloquentia.",description:"Finale le 25 mars à 20h à La Seine Musicale.",link:"https://billetterie.cultura.com/fr/manifestation/finale-internationale-eloquentia-2026-billet/idmanif/642854",lat:48.8355,lng:2.2294},
-      {id:"e13",title:"Marche Blanche pour Haïti",date:"2026-03-22",city:"Paris",category:"association",location:"Place d'Italie vers Place Port-au-Prince",price:"Gratuit",organizer:"A.Têt Ansanm de Paris",status:"published",poster:"https://cdn.shopify.com/s/files/1/0079/5557/8943/files/Screenshot_20260317_025319_WhatsAppBusiness.jpg?v=1773715244",excerpt:"Marche pour le rétablissement du droit de vote et la sécurité du peuple haïtien.",description:"Rendez-vous le 22 mars à 14h Place d'Italie. Contact: 06 21 97 12 64.",link:"#soumettre",lat:48.8309,lng:2.3553},
-      {id:"e14",title:"Femme en Lumière — Journée développement personnel",date:"2026-03-28",city:"Pierrefitte-sur-Seine",category:"formation",location:"4 Chemin des Fourches, Bât. F",price:"30 € / pers · 50 € / 2 pers (repas compris)",organizer:"Pèlerin à la Découverte",status:"published",poster:"https://cdn.shopify.com/s/files/1/0079/5557/8943/files/IMG-20260215-WA0091_1.jpg?v=1773715729",excerpt:"Conférence développement personnel, témoignages inspirants, activités créatives.",description:"Journée Femme en Lumière. 10h–16h. Info: 06 52 38 96 16.",link:"#soumettre",lat:48.9554,lng:2.3638}
+      {id:"e1",title:"Haitian Afterwork",date:"2026-01-31",city:"Paris",category:"business",location:"Lakay Madiba",price:"Billetterie en ligne",organizer:"Jeunesse Haïtienne de France",status:"published",poster:"https://data-prod.bizouk.com/events/flyers/11/49/80/resized/114980_6ea3e0d84fee06375633631b57677d29_800x600_auto_97.jpg",excerpt:"Networking, buffet haïtien et DJ set.",description:"Afterwork networking et culturel à Lakay Madiba.",link:"https://www.bizouk.com/events/details/haitian-afterwork/114980",ticketing:{mode:"external",url:"https://www.bizouk.com/events/details/haitian-afterwork/114980",label:"Billetterie partenaire",fees_note:"",opens_soon:false},lat:48.8691,lng:2.3556},
+      {id:"e2",title:"Haitian Carnival",date:"2026-02-19",city:"Paris",category:"musique",location:"Twenty One Sound Bar",price:"Billetterie en ligne",organizer:"Organisateur diaspora",status:"published",poster:"https://data-prod.bizouk.com/events/flyers/11/63/65/resized/116365_3b197a2554c88bb36aab5d1307727843_800x600_auto_97.jpg",excerpt:"Carnaval haïtien à Paris.",description:"Soirée carnaval, raboday, soca, afro et konpa à Paris.",link:"https://www.bizouk.com/events/details/haitian-carnival/116365",ticketing:{mode:"external",url:"https://www.bizouk.com/events/details/haitian-carnival/116365",label:"Billetterie partenaire",fees_note:"",opens_soon:false},lat:48.8534,lng:2.3831},
+      {id:"e3",title:"Paris Sou Konpa Sware — Février",date:"2026-02-21",city:"Paris",category:"musique",location:"Temple du Swing",price:"Voir billetterie",organizer:"Paris Sou Konpa",status:"published",poster:"https://data-prod.bizouk.com/events/flyers/11/44/03/resized/114403_ff9e107d792857e905b9220a76f82e36_800x600_auto_97.jpg",excerpt:"Soirée mensuelle 100% konpa.",description:"Cours et soirée 100% konpa à Paris.",link:"https://www.bizouk.com/events/details/paris-sou-konpa-sware-edition-fevrier-20/114403",ticketing:{mode:"external",url:"https://www.bizouk.com/events/details/paris-sou-konpa-sware-edition-fevrier-20/114403",label:"Billetterie partenaire",fees_note:"",opens_soon:false},lat:48.8422,lng:2.3217},
+      {id:"e4",title:"Paris Sou Konpa Sware — Mars",date:"2026-03-14",city:"Paris",category:"musique",location:"Temple du Swing",price:"Voir billetterie",organizer:"Paris Sou Konpa",status:"published",poster:"https://data-prod.bizouk.com/events/flyers/11/44/04/resized/114404_7eadd91210bcc030e3d8062d37454983_800x600_auto_97.jpg",excerpt:"Cours puis soirée 100% konpa.",description:"Édition mars de Paris Sou Konpa.",link:"https://www.bizouk.com/events/details/paris-sou-konpa-sware-edition-mars-2026/114404",ticketing:{mode:"external",url:"https://www.bizouk.com/events/details/paris-sou-konpa-sware-edition-mars-2026/114404",label:"Billetterie partenaire",fees_note:"",opens_soon:false},lat:48.8422,lng:2.3217},
+      {id:"e5",title:"Miss Prestige Haïti France 2026",date:"2026-03-21",city:"Nanterre",category:"culture",location:"Espace Chevreuil",price:"31,90 €",organizer:"AD Music / partenaire",status:"published",poster:"https://cdn.shopify.com/s/files/1/0079/5557/8943/files/FB_IMG_1773711153896.jpg?v=1773711309",excerpt:"Gala emblématique, culture et élégance.",description:"Soirée de gala emblématique de la diaspora haïtienne à Nanterre.",link:"https://www.ticketmaster.fr/fr/manifestation/miss-prestige-haiti-france-2026-billet/idmanif/649529",ticketing:{mode:"external",url:"https://www.ticketmaster.fr/fr/manifestation/miss-prestige-haiti-france-2026-billet/idmanif/649529",label:"Billetterie partenaire",fees_note:"",opens_soon:false},lat:48.8924,lng:2.2066},
+      {id:"e6",title:"Concert Dana-Jo pour Famille Kizito",date:"2026-03-27",city:"Bindernheim",category:"association",location:"Église Saint Ulrich",price:"2 €",organizer:"Famille Kizito Haïti France",status:"published",poster:"https://cdn.helloasso.com/img/photos/evenements/croppedimage-7a46b34bb58d40bf9631b73d336d2e0f.png",excerpt:"Concert solidaire au profit de Famille Kizito.",description:"Concert au profit d'actions éducatives et sociales liées à Haïti.",link:"https://www.helloasso.com/associations/famille-kizito-haiti-france/evenements/concert-dana-jo-a-bindernheim-27-03-2026",ticketing:{mode:"external",url:"https://www.helloasso.com/associations/famille-kizito-haiti-france/evenements/concert-dana-jo-a-bindernheim-27-03-2026",label:"Billetterie partenaire",fees_note:"",opens_soon:false},lat:48.2861,lng:7.6039},
+      {id:"e7",title:"Paris Sou Konpa Sosyal — Avril",date:"2026-04-12",city:"Paris",category:"musique",location:"Cyclone Studio",price:"10–15 €",organizer:"Paris Sou Konpa",status:"published",poster:"https://data-prod.bizouk.com/events/flyers/11/72/41/resized/117241_eee60b4974141b6057a5238f3df699fa_800x600_auto_97.jpg",excerpt:"Après-midi 100% konpa.",description:"Cours + social dancing 100% konpa à Cyclone Studio.",link:"https://www.bizouk.com/events/details/paris-sou-konpa-sosyal-edition-avril-202/117241",ticketing:{mode:"external",url:"https://www.bizouk.com/events/details/paris-sou-konpa-sosyal-edition-avril-202/117241",label:"Billetterie partenaire",fees_note:"",opens_soon:false},lat:48.8292,lng:2.3492},
+      {id:"e8",title:"Paris Sou Konpa Sware — Avril",date:"2026-04-25",city:"Paris",category:"musique",location:"Temple du Swing",price:"Voir billetterie",organizer:"Paris Sou Konpa",status:"published",poster:"https://data-prod.bizouk.com/events/flyers/11/44/04/resized/114404_7eadd91210bcc030e3d8062d37454983_800x600_auto_97.jpg",excerpt:"Édition avril de la soirée konpa.",description:"Édition avril de Paris Sou Konpa Sware.",link:"https://www.bizouk.com/events/details/paris-sou-konpa-sware-edition-avril-2026/116689",ticketing:{mode:"external",url:"https://www.bizouk.com/events/details/paris-sou-konpa-sware-edition-avril-2026/116689",label:"Billetterie partenaire",fees_note:"",opens_soon:false},lat:48.8422,lng:2.3217},
+      {id:"e9",title:"Fête Nationale d'Haïti — Jour 1",date:"2026-05-16",city:"Perpignan",category:"culture",location:"10 Rue des Jardins-Saint-Louis",price:"25 € / 10 € / gratuit -8 ans",organizer:"Main dans la Main France Haïti",status:"published",poster:"https://cdn.helloasso.com/img/photos/evenements/croppedimage-74c7658bb4fb41c9af67f27c8ad30169.png",excerpt:"Culture haïtienne, repas et compas.",description:"Spectacle de danse traditionnelle, repas haïtien et soirée dansante.",link:"https://www.helloasso.com/associations/main-dans-la-main-france-haiti/evenements/fete-du-drapeau-haitien",ticketing:{mode:"external",url:"https://www.helloasso.com/associations/main-dans-la-main-france-haiti/evenements/fete-du-drapeau-haitien",label:"Billetterie partenaire",fees_note:"",opens_soon:false},lat:42.6887,lng:2.8948},
+      {id:"e10",title:"Fête Nationale d'Haïti — Jour 2",date:"2026-05-17",city:"Perpignan",category:"culture",location:"10 Rue des Jardins-Saint-Louis",price:"25 € / 10 € / gratuit -8 ans",organizer:"Main dans la Main France Haïti",status:"published",poster:"https://cdn.helloasso.com/img/photos/evenements/croppedimage-74c7658bb4fb41c9af67f27c8ad30169.png",excerpt:"Deuxième journée festive et culturelle.",description:"Suite de la fête nationale d'Haïti organisée à Perpignan.",link:"https://www.helloasso.com/associations/main-dans-la-main-france-haiti/evenements/fete-du-drapeau-haitien",ticketing:{mode:"external",url:"https://www.helloasso.com/associations/main-dans-la-main-france-haiti/evenements/fete-du-drapeau-haitien",label:"Billetterie partenaire",fees_note:"",opens_soon:false},lat:42.6887,lng:2.8948},
+      {id:"e11",title:"Naïka — Eclesia Tour · Salle Pleyel",date:"2026-03-08",city:"Paris",category:"musique",location:"Salle Pleyel",price:"45,50 – 69,70 €",organizer:"Live Nation",status:"published",poster:"https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80",excerpt:"Artiste franco-haïtienne, ECLESIA Tour à la Salle Pleyel.",description:"Naïka présente son album ECLESIA. Dimanche 8 mars, 20h.",link:"https://www.sallepleyel.com/evenement/naika/",ticketing:{mode:"external",url:"https://www.sallepleyel.com/evenement/naika/",label:"Billetterie partenaire",fees_note:"",opens_soon:false},lat:48.8765,lng:2.3005},
+      {id:"e12",title:"Finale Eloquentia 2026 — Haïti en scène",date:"2026-03-25",city:"Paris",category:"culture",location:"La Seine Musicale",price:"Voir billetterie",organizer:"Consulat Général d'Haïti à Paris",status:"published",poster:"https://cdn.shopify.com/s/files/1/0079/5557/8943/files/FB_IMG_1773712511694.jpg?v=1773714899",excerpt:"Abigail Alexandre représente Haïti en finale internationale d'Eloquentia.",description:"Finale le 25 mars à 20h à La Seine Musicale.",link:"https://billetterie.cultura.com/fr/manifestation/finale-internationale-eloquentia-2026-billet/idmanif/642854",ticketing:{mode:"external",url:"https://billetterie.cultura.com/fr/manifestation/finale-internationale-eloquentia-2026-billet/idmanif/642854",label:"Billetterie partenaire",fees_note:"",opens_soon:false},lat:48.8355,lng:2.2294},
+      {id:"e13",title:"Marche Blanche pour Haïti",date:"2026-03-22",city:"Paris",category:"association",location:"Place d'Italie vers Place Port-au-Prince",price:"Gratuit",organizer:"A.Têt Ansanm de Paris",status:"published",poster:"https://cdn.shopify.com/s/files/1/0079/5557/8943/files/Screenshot_20260317_025319_WhatsAppBusiness.jpg?v=1773715244",excerpt:"Marche pour le rétablissement du droit de vote et la sécurité du peuple haïtien.",description:"Rendez-vous le 22 mars à 14h Place d'Italie. Contact: 06 21 97 12 64.",link:"#soumettre",ticketing:{mode:"info",url:"#soumettre",label:"Accès libre",fees_note:"Gratuit",opens_soon:false},lat:48.8309,lng:2.3553},
+      {id:"e14",title:"Femme en Lumière — Journée développement personnel",date:"2026-03-28",city:"Pierrefitte-sur-Seine",category:"formation",location:"4 Chemin des Fourches, Bât. F",price:"30 € / pers · 50 € / 2 pers (repas compris)",organizer:"Pèlerin à la Découverte",status:"published",poster:"https://cdn.shopify.com/s/files/1/0079/5557/8943/files/IMG-20260215-WA0091_1.jpg?v=1773715729",excerpt:"Conférence développement personnel, témoignages inspirants, activités créatives.",description:"Journée Femme en Lumière. 10h–16h. Info: 06 52 38 96 16.",link:"#soumettre",ticketing:{mode:"konbit",url:"#soumettre",label:"Billetterie Konbit",fees_note:"Tarif partenaire",opens_soon:false},lat:48.9554,lng:2.3638}
     ];
     const trainings=[
       {name:"Salon SME Paris",mode:"Présentiel · Île-de-France",type:"Payant",duration:"2 jours",level:"Tous niveaux",text:"Le rendez-vous incontournable des entrepreneurs et PME en Île-de-France.",link:"https://www.sme.fr/"},
@@ -2484,6 +2536,23 @@ window.addEventListener("DOMContentLoaded", function () {
       const active=box.querySelector(".active");
       if(active) setTimeout(()=>active.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"}),50);
     }
+
+    function getTicketBadge(e){
+      if(!e.ticketing) return "";
+      if(e.ticketing.mode==="konbit") return '<span class="tag konbit-ticket">✦ Billetterie Konbit</span>';
+      if(e.ticketing.mode==="external") return '<span class="tag external-ticket">Billetterie partenaire</span>';
+      return '<span class="tag info-ticket">Accès libre</span>';
+    }
+    function getTicketButtonLabel(e){
+      if(!e.ticketing) return "Voir les infos";
+      if(e.ticketing.mode==="konbit") return "Réserver avec Konbit";
+      if(e.ticketing.mode==="external") return "Voir la billetterie";
+      return "Voir les infos";
+    }
+    function getTicketUrl(e){
+      if(e.ticketing&&e.ticketing.url) return e.ticketing.url;
+      return e.link&&e.link!=="#"?e.link:"#soumettre";
+    }
     function filterEvents(){
       state.search=(el.search.value||"").trim().toLowerCase();
       state.year=el.year.value;state.category=el.category.value;
@@ -2518,6 +2587,7 @@ window.addEventListener("DOMContentLoaded", function () {
         <div class="editorial-main-media"><img src="${main.poster||getFallback(main.category)}" alt="${main.title}" onerror="this.src='${getFallback(main.category)}'"></div>
         <div class="editorial-main-body">
           <div class="editorial-kicker">${past?"Événement terminé":"Éditorial du mois"}</div>
+          ${getTicketBadge(main)}
           <h3>${main.title}</h3>
           <div class="editorial-meta">
             <span>${fmt(main.date)}</span>
@@ -2526,7 +2596,7 @@ window.addEventListener("DOMContentLoaded", function () {
           </div>
           <p>${main.description||main.excerpt||""}</p>
           <div class="actions">
-            <a class="btn btn-gold" href="${main.link&&main.link!=="#"?main.link:"#soumettre"}" target="_blank" rel="noopener">Réserver</a>
+            <a class="btn btn-gold" href="${getTicketUrl(main)}" target="_blank" rel="noopener">${getTicketButtonLabel(main)}</a>
             <button class="btn btn-outline" data-open-ed="${main.id}">Détail</button>
           </div>
         </div>`;
@@ -2554,12 +2624,12 @@ window.addEventListener("DOMContentLoaded", function () {
           <div class="timeline-card">
             <div class="timeline-media"><img src="${e.poster||getFallback(e.category)}" alt="${e.title}" onerror="this.src='${getFallback(e.category)}'"></div>
             <div class="timeline-body">
-              <div class="tags"><span class="tag ${e.category}">${e.category}</span>${past?'<span class="tag finished">Terminé</span>':''}</div>
+              <div class="tags"><span class="tag ${e.category}">${e.category}</span>${getTicketBadge(e)}${past?'<span class="tag finished">Terminé</span>':''}</div>
               <h4>${e.title}</h4>
               <p>${e.excerpt||""}</p>
               <div class="editorial-meta"><span>📍 ${e.city}</span><span>${e.location}</span><span>${e.price||"Tarif à confirmer"}</span></div>
               <div class="actions">
-                <a class="btn btn-gold" href="${e.link&&e.link!=="#"?e.link:"#soumettre"}" target="_blank" rel="noopener">Réserver</a>
+                <a class="btn btn-gold" href="${getTicketUrl(e)}" target="_blank" rel="noopener">${getTicketButtonLabel(e)}</a>
                 <button class="btn btn-outline" data-open-tl="${e.id}">Détail</button>
               </div>
             </div>
@@ -2574,14 +2644,14 @@ window.addEventListener("DOMContentLoaded", function () {
         return `<article class="card${past?" card-past":""}">
           <img src="${e.poster||getFallback(e.category)}" alt="${e.title}" onerror="this.src='${getFallback(e.category)}'">
           <div class="card-b">
-            <div class="tags"><span class="tag ${e.category}">${e.category}</span>${past?'<span class="tag finished">Terminé</span>':''}</div>
+            <div class="tags"><span class="tag ${e.category}">${e.category}</span>${getTicketBadge(e)}${past?'<span class="tag finished">Terminé</span>':''}</div>
             <div class="card-location">📍 ${e.city}</div>
             <div class="date">${fmt(e.date)}</div>
             <h4>${e.title}</h4>
             <p>${e.excerpt||""}</p>
             <div class="mini-meta"><div><strong>Lieu</strong><span>${e.location}</span></div><div><strong>Tarif</strong><span>${e.price||"À confirmer"}</span></div></div>
             <div class="actions">
-              <a class="btn btn-gold" href="${e.link&&e.link!=="#"?e.link:"#soumettre"}" target="_blank" rel="noopener">Réserver</a>
+              <a class="btn btn-gold" href="${getTicketUrl(e)}" target="_blank" rel="noopener">${getTicketButtonLabel(e)}</a>
               <button class="btn btn-outline" data-open="${e.id}">Détail</button>
             </div>
           </div>
@@ -2705,8 +2775,8 @@ window.addEventListener("DOMContentLoaded", function () {
       if(me) me.textContent=e.excerpt||"";if(md) md.textContent=fmt(e.date);if(mc) mc.textContent=e.city;
       if(ml) ml.textContent=e.location||"—";if(mpr) mpr.textContent=e.price||"À confirmer";
       if(mo) mo.textContent=e.organizer||"—";if(mdesc) mdesc.textContent=e.description||"";
-      if(mlink) mlink.href=e.link&&e.link!=="#"?e.link:"#soumettre";
-      if(mtags) mtags.innerHTML=`<span class="tag ${e.category}">${e.category}</span>`;
+      if(mlink){mlink.href=getTicketUrl(e);mlink.textContent=getTicketButtonLabel(e);}
+      if(mtags) mtags.innerHTML=`<span class="tag ${e.category}">${e.category}</span>${getTicketBadge(e)}`;
       g("modal").classList.add("open");
     }
     function closeModal(){document.getElementById("modal").classList.remove("open");}
@@ -2748,4 +2818,4 @@ window.addEventListener("DOMContentLoaded", function () {
 </script>
 
 </body>
-</html>
+  </html>

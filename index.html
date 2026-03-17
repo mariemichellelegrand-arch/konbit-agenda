@@ -157,6 +157,134 @@
 .external-ticket{background:#eef2ff;color:#1738BE;}
 .info-ticket{background:#f3f4f6;color:#6b7280;}
 </style>
+
+<style>
+/* === CALENDRIER PREMIUM === */
+.calendar-panel-head{
+  margin-bottom:6px;
+}
+.cal-kicker{
+  font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:4px;display:block;
+}
+.day{
+  border-width:1px;
+  border-color:rgba(19,33,63,.05);
+}
+.day.has{
+  border-color:rgba(23,56,190,.14);
+  box-shadow:0 4px 14px rgba(23,56,190,.06);
+}
+.day.today{
+  box-shadow:0 6px 20px rgba(23,56,190,.10);
+}
+
+/* === HERO UPGRADE === */
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;padding:7px 14px;
+  font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.9);margin-bottom:16px;
+}
+
+/* === EDITORIAL UPGRADE === */
+.editorial-kicker{
+  background:linear-gradient(135deg,#fff7dd,#fffaf0);
+  border:1px solid rgba(242,194,48,.3);
+  border-radius:999px;
+  padding:5px 12px;
+  display:inline-block;
+}
+
+/* === TIMELINE UPGRADE === */
+.timeline-date-num{
+  font-size:48px;
+  color:var(--blue-deep);
+  opacity:.85;
+}
+.timeline-date-month{
+  font-size:9px;
+  letter-spacing:.16em;
+}
+.timeline-card{
+  border:none;
+  box-shadow:0 8px 28px rgba(19,33,63,.07);
+}
+
+/* === CARTES GRILLE UPGRADE === */
+.card{
+  border:none;
+  box-shadow:0 8px 28px rgba(19,33,63,.07);
+  transition:.2s;
+}
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 16px 40px rgba(19,33,63,.12);
+}
+.card h4{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  line-height:1.1;
+}
+
+/* === CARTE MAP UPGRADE === */
+#carte .map-head h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;
+}
+.side-item{
+  border-bottom:1px solid rgba(19,33,63,.06);
+  padding:12px 0;
+}
+.side-item:last-child{border-bottom:none;}
+.side-item strong{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;
+  display:block;
+  color:var(--blue-deep);
+}
+.side-item span{
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* === FORMATIONS UPGRADE === */
+.train{
+  border:none;
+  box-shadow:0 8px 28px rgba(19,33,63,.07);
+}
+.train h4{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+}
+
+/* === FORMULAIRE UPGRADE === */
+.submit-info h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:40px !important;
+  line-height:1.05;
+}
+
+/* === KONBIT SIGNATURE === */
+.konbit-sig{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:10px;font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gold);
+}
+.konbit-sig::before{content:"✦ ";}
+
+/* === SECTION SUBTITLES MORE EDITORIAL === */
+.list-head h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px;
+  line-height:1.05;
+}
+.training-head h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px;
+}
+</style>
 </head>
 <body>
 <style>
@@ -500,11 +628,11 @@ font-size:22px !important;
       <a href="#agenda">Agenda</a>
       <a href="#carte">Carte</a>
       <a href="#formations">Formations</a>
-      <a href="#soumettre">Soumettre</a>
+      <a href="#soumettre">Publier</a>
       <a href="#partenaires">Partenaires</a>
     </nav>
 
-    <a href="#soumettre" class="btn btn-gold">Ajouter un événement</a>
+    <a href="#soumettre" class="btn btn-gold">Publier sur Konbit</a>
   </div>
 </header>
 
@@ -764,15 +892,13 @@ line-height:1.45;
     <div class="hero-card">
       <div class="hero-grid">
         <div>
-          <h2>La plateforme communautaire des <em>événements haïtiens</em> en France</h2>
+          <h2>Les rendez-vous haïtiens en France, portés par <em>Konbit Agency</em></h2>
 
-          <p>
-            Culture, rencontres, entrepreneuriat, adresses, billetterie et mise en lumière des initiatives qui font vivre la communauté.
-          </p>
+          <p>Une plateforme éditoriale et communautaire pour découvrir les temps forts haïtiens en France : culture, musique, rencontres, initiatives, entrepreneuriat et billetterie nouvelle génération.</p>
 
           <div class="hero-actions">
-            <a href="#agenda" class="btn btn-gold">Voir le calendrier</a>
-            <a href="#formations" class="btn btn-light">Voir les formations</a>
+            <a href="#agenda" class="btn btn-gold">Découvrir la sélection</a>
+            <a href="#billetterie-konbit" class="btn btn-light">Explorer la billetterie</a>
           </div>
         </div>
 
@@ -1009,10 +1135,10 @@ gap:5px;
               ✦ Billetterie Konbit — Nouveau
             </div>
             <h3 style="margin:0 0 10px;font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--blue-deep);line-height:1.05">
-              Une billetterie plus juste, plus directe, plus communautaire
+              La billetterie Konbit ouvre une nouvelle voie
             </h3>
             <p class="sub" style="max-width:720px">
-              Konbit Agency développe une solution de billetterie pensée pour les organisateurs et le public de la communauté haïtienne en France — une alternative plus accessible que les standards du marché. Le lancement commence avec <strong>Femme en Lumière</strong>, premier événement partenaire.
+              Pensée pour les organisateurs, lisible pour le public et plus accessible que les standards du marché, la billetterie Konbit accompagne les rendez-vous qui méritent une diffusion plus juste, plus directe et plus élégante. Premier événement partenaire : <strong>Femme en Lumière</strong>.
             </p>
           </div>
           <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
@@ -1027,7 +1153,7 @@ gap:5px;
     <div class="discover-shell panel">
       <div class="discover-head">
         <div class="discover-kicker">Navigation éditoriale</div>
-        <h3>Parcourir la scène haïtienne en France</h3>
+        <h3>Explorer les rendez-vous qui font vibrer la communauté</h3>
         <p>Soirées, culture, rencontres, business, événements engagés et temps forts de la communauté : explorez la programmation comme une sélection.</p>
       </div>
 
@@ -1336,7 +1462,7 @@ border-radius:50%;
     <div class="panel panel-pad">
       <div class="cal-head">
         <div>
-          <div class="cal-title" id="calTitle">Mars 2026</div>
+          <div style="font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Sélection mensuelle</div><div class="cal-title" id="calTitle">Mars 2026</div>
 
         </div>
 
@@ -1550,7 +1676,7 @@ padding:0 16px;
       <div class="panel panel-pad">
         <div class="list-head">
           <div>
-            <h3>Le mois en mouvement</h3>
+            <h3>Le rythme du mois</h3>
             <div class="sub">Lecture chronologique du mois sélectionné.</div>
           </div>
         </div>
@@ -1562,7 +1688,7 @@ padding:0 16px;
   <div class="wrap">
     <div class="list-head">
       <div>
-        <h3>La programmation complète</h3>
+        <h3>Tous les rendez-vous du mois</h3>
         <div class="sub" id="countText"></div>
       </div>
     </div>
@@ -1666,7 +1792,7 @@ overflow:hidden;
 <section class="section" id="carte">
   <div class="wrap">
     <div class="map-head" style="margin-bottom:14px">
-      <h3>Carte interactive diaspora</h3>
+      <h3>Les rendez-vous près de vous</h3>
 
     </div>
 
@@ -1795,7 +1921,7 @@ color:var(--blue-deep);
 <section class="section" id="formations" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="training-head" style="margin-bottom:16px">
-      <h3>Formations et conférences gratuites sur l’entrepreneuriat</h3>
+      <h3>Entreprendre, apprendre, se structurer</h3>
       <div class="sub">
         Un bloc stratégique pour Konbit Agency : orientation, création d’activité, business plan,
         innovation, ateliers et conférences utiles à la diaspora.
@@ -1920,13 +2046,13 @@ color:var(--muted);
 <section class="section" id="partenaires" style="background:linear-gradient(135deg,#0E1E63 0%,#1738BE 100%);padding:40px 0">
   <div class="wrap">
     <div style="margin-bottom:28px;text-align:center">
-      <div style="font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:8px">Opportunités commerciales</div>
-      <h3 style="font-family:'Cormorant Garamond',serif;font-size:38px;color:#fff;margin:0 0 10px">Partenaires &amp; sponsors</h3>
+      <div style="font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:8px">Présences de marque &amp; rayonnement</div>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:38px;color:#fff;margin:0 0 10px">Partenaires de la plateforme</h3>
       <p style="color:rgba(255,255,255,.75);font-size:15px;max-width:520px;margin:0 auto">+5 000 membres actifs · Diaspora haïtienne en France · Audience qualifiée</p>
     </div>
     <div class="sponsors">
       <div class="sponsor-card">
-        <div class="sponsor-tier" style="background:var(--gold);color:var(--blue-deep)">⭐ Sponsor Premium</div>
+        <div class="sponsor-tier" style="background:var(--gold);color:var(--blue-deep)">⭐ Présence signature</div>
         <div class="sponsor-price">À partir de 300 €<span>/mois</span></div>
         <h4>Visibilité marque</h4>
         <ul class="sponsor-list">
@@ -1941,7 +2067,7 @@ color:var(--muted);
       <div class="sponsor-card" style="border:2px solid var(--gold)">
         <div class="sponsor-tier" style="background:rgba(242,194,48,.15);color:var(--gold)">🎯 Mise en avant</div>
         <div class="sponsor-price">150 €<span>/événement</span></div>
-        <h4>Événement phare</h4>
+        <h4>Mise en lumière éditoriale</h4>
         <ul class="sponsor-list">
           <li>Position hero (1er mois)</li>
           <li>Affiche en couverture du calendrier</li>
@@ -2076,10 +2202,9 @@ display:block;
   <div class="wrap">
     <div class="submit">
       <div class="submit-info">
-        <h3 style="color:#fff">Soumettre un événement</h3>
+        <h3 style="color:#fff">Référencer un rendez-vous sur Konbit</h3>
         <p>
-          Concert, gala, brunch, conférence, salon, exposition, formation, networking ou afterwork :
-          soumettez votre événement. Notre équipe le valide et le publie sous 48h.
+          Konbit Agency sélectionne, structure et met en visibilité les événements qui participent au rayonnement de la scène haïtienne en France. Publication, accompagnement éditorial et étude de billetterie peuvent être envisagés.
         </p>
       </div>
 
@@ -2354,7 +2479,7 @@ margin-bottom:6px;
         <p><a href="#carte">Carte</a></p>
         <p><a href="#formations">Formations</a></p>
         <p><a href="#partenaires">Partenaires</a></p>
-        <p><a href="#soumettre">Soumettre</a></p>
+        <p><a href="#soumettre">Publier</a></p>
       </div>
 
       <div>
@@ -2504,22 +2629,20 @@ window.addEventListener("DOMContentLoaded", function () {
       el.city.innerHTML='<option value="all">Toutes</option>';
       cities.forEach(city=>{const o=document.createElement("option");o.value=city;o.textContent=city;el.city.appendChild(o);});
     }
-    function buildMonths(){
-      const sel=document.getElementById("monthSelect");
-      if(!sel) return;
-      sel.innerHTML='<option value="">Sélectionner un mois</option>';
-      monthKeys.forEach(key=>{
-        const [y,m]=key.split("-");
-        const opt=document.createElement("option");
-        opt.value=key;opt.textContent=`${monthNames[parseInt(m,10)-1]} ${y}`;
+    function buildMonths(){} ${y}`;
         if(key===state.currentMonth) opt.selected=true;
         sel.appendChild(opt);
       });
       sel.onchange=()=>{if(sel.value){state.currentMonth=sel.value;const t=getTodayIso();state.selectedDay=t.startsWith(sel.value)?t:null;apply();}};
     }
     function renderLuxuryMonthNav(){
-      const box=document.getElementById("monthLuxuryNav");
+      const box=document.getElementById("monthPillsTrack");
+      const current=document.getElementById("monthNavCurrent");
       if(!box) return;
+      if(current){
+        const [y,m]=state.currentMonth.split("-");
+        current.textContent=`${monthNames[parseInt(m,10)-1]} ${y}`;
+      }
       box.innerHTML=monthKeys.map(key=>{
         const [y,m]=key.split("-");
         return `<button class="month-luxury-item${key===state.currentMonth?" active":""}" data-month-key="${key}"><strong>${monthNames[parseInt(m,10)-1]}</strong><span>${y}</span></button>`;
@@ -2528,11 +2651,10 @@ window.addEventListener("DOMContentLoaded", function () {
         btn.onclick=()=>{
           state.currentMonth=btn.dataset.monthKey;
           const t=getTodayIso();state.selectedDay=t.startsWith(state.currentMonth)?t:null;
-          buildMonths();apply();
+          apply();
           btn.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});
         };
       });
-      // Scroll actif visible
       const active=box.querySelector(".active");
       if(active) setTimeout(()=>active.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"}),50);
     }
@@ -2586,7 +2708,7 @@ window.addEventListener("DOMContentLoaded", function () {
       mainBox.innerHTML=`
         <div class="editorial-main-media"><img src="${main.poster||getFallback(main.category)}" alt="${main.title}" onerror="this.src='${getFallback(main.category)}'"></div>
         <div class="editorial-main-body">
-          <div class="editorial-kicker">${past?"Événement terminé":"Éditorial du mois"}</div>
+          <div class="editorial-kicker">${past?"Événement terminé":"Le rendez-vous signature"}</div>
           ${getTicketBadge(main)}
           <h3>${main.title}</h3>
           <div class="editorial-meta">
@@ -2665,6 +2787,7 @@ window.addEventListener("DOMContentLoaded", function () {
       const [ys,ms]=state.currentMonth.split("-");
       const year=parseInt(ys,10),month=parseInt(ms,10)-1;
       el.calTitle.textContent=`${monthNames[month]} ${year}`;
+      const calKicker=document.querySelector('.cal-kicker');if(calKicker) calKicker.textContent='Sélection mensuelle';
       el.calendar.innerHTML="";
       weekdays.forEach(w=>{const d=document.createElement("div");d.className="weekday";d.textContent=w;el.calendar.appendChild(d);});
       const first=new Date(year,month,1);
@@ -2752,7 +2875,7 @@ window.addEventListener("DOMContentLoaded", function () {
       const[hd,ht,htx,hc,hp,hl,ho]=ids.map(id=>document.getElementById(id));
       if(hd) hd.textContent=fmt(e.date);if(ht) ht.textContent=e.title;if(htx) htx.textContent=e.excerpt||"";
       if(hc) hc.textContent="📍 "+e.city;if(hp) hp.textContent=e.price||"";
-      if(hl) hl.href=e.link&&e.link!=="#"?e.link:"#soumettre";
+      if(hl){hl.href=getTicketUrl(e);hl.textContent=getTicketButtonLabel(e);}
       if(ho){const clone=ho.cloneNode(true);ho.parentNode.replaceChild(clone,ho);clone.addEventListener("click",()=>openModal(e));}
     }
     function startCarousel(){
@@ -2818,4 +2941,4 @@ window.addEventListener("DOMContentLoaded", function () {
 </script>
 
 </body>
-  </html>
+</html>

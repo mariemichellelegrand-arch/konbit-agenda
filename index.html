@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agenda communautaire haïtien en France | Billetterie, événements & visibilité — Konbit Agency</title>
-<meta name="description" content="Konbit Agency réunit les rendez-vous haïtiens en France : culture, musique, rencontres, entrepreneuriat, billetterie, adresses et visibilité pour les organisateurs.">
+<title>Maison Konbit | Agenda signature, billetterie & scène haïtienne en France</title>
+<meta name="description" content="Maison Konbit signe une lecture éditoriale de la scène haïtienne en France : agenda signature, billetterie, culture, rencontres, entrepreneuriat et visibilité choisie.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -12,23 +12,28 @@
 
 <style>
 :root{
-  --blue:#1738BE;
-  --blue-deep:#0E1E63;
-  --gold:#F2C230;
-  --gold-soft:#fff5d6;
-  --red:#D7264D;
-  --green:#2E7B67;
-  --violet:#6B49D9;
-  --orange:#d97706;
-  --text:#13213f;
-  --muted:#667085;
-  --bg:#f6f5f1;
-  --surface:#ffffff;
-  --line:rgba(19,33,63,.09);
-  --line-strong:rgba(19,33,63,.14);
-  --radius:24px;
-  --shadow:0 18px 44px rgba(19,33,63,.10);
-  --shadow-soft:0 10px 26px rgba(19,33,63,.06);
+  --ink:#0A1023;
+  --navy:#111C44;
+  --royal:#1A2F7A;
+  --cobalt:#2747B8;
+  --gold:#C9A34A;
+  --gold-light:#E8D7A7;
+  --champagne:#F6F0E4;
+  --ivory:#F8F5EE;
+  --pearl:#FCFBF8;
+  --wine:#6E2132;
+  --forest:#1F5C4E;
+  --text:#16213E;
+  --muted:#6C748A;
+  --line:rgba(17,28,68,.10);
+  --line-strong:rgba(17,28,68,.16);
+  --surface:#FFFFFF;
+  --surface-soft:#FBFAF7;
+  --bg:linear-gradient(180deg,#F8F5EE 0%,#F6F3EC 100%);
+  --radius:26px;
+  --radius-xl:34px;
+  --shadow:0 24px 60px rgba(10,16,35,.10);
+  --shadow-soft:0 10px 28px rgba(10,16,35,.06);
   --container:min(1240px,calc(100% - 28px));
 }
 
@@ -39,6 +44,8 @@ body{
   font-family:'DM Sans',sans-serif;
   background:var(--bg);
   color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
@@ -50,32 +57,36 @@ button,input,select,textarea{font:inherit}
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:46px;
-  padding:0 18px;
+  min-height:48px;
+  padding:0 20px;
   border-radius:999px;
-  font-size:11px;
+  font-size:10px;
   font-weight:800;
-  letter-spacing:.11em;
+  letter-spacing:.16em;
   text-transform:uppercase;
   cursor:pointer;
-  transition:.22s ease;
+  transition:transform .22s ease, box-shadow .22s ease, background .22s ease, border-color .22s ease;
   border:none;
   white-space:nowrap;
 }
 .btn:hover{transform:translateY(-2px)}
 .btn-gold{
-  background:linear-gradient(135deg,#f8d35e,var(--gold));
-  color:var(--blue-deep);
-  box-shadow:0 10px 24px rgba(242,194,48,.28);
+  background:linear-gradient(135deg,#e7d29a 0%, #c9a34a 55%, #b88d2f 100%);
+  color:var(--navy);
+  border:1px solid rgba(17,28,68,.06);
+  box-shadow:0 10px 20px rgba(201,163,74,.18), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.btn-gold:hover{
+  box-shadow:0 14px 26px rgba(201,163,74,.22), inset 0 1px 0 rgba(255,255,255,.35);
 }
 .btn-outline{
-  background:#fff;
-  border:1px solid var(--line);
-  color:var(--blue-deep);
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(17,28,68,.10);
+  color:var(--navy);
 }
 .btn-dark{
-  background:rgba(255,255,255,.1);
-  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
   color:#fff;
 }
 .section{padding:20px 0}
@@ -94,37 +105,107 @@ button,input,select,textarea{font:inherit}
   margin-top:6px;
 }
 
-.topbar{
-  background:linear-gradient(120deg,#0E1E63,#1738BE,#0E1E63);
-  background-size:200% 200%;
-  animation:topbarMove 10s ease infinite;
-  color:#fff;
-  text-align:center;
-  padding:10px 14px;
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:.05em;
+.topbar-marquee{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#0b1434 0%, #162a6b 52%, #0f1e4e 100%);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  color:rgba(255,255,255,.92);
+  height:42px;
+  display:flex;
+  align-items:center;
 }
-@keyframes topbarMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+.topbar-marquee::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent 0%, rgba(201,163,74,.10) 20%, transparent 40%, transparent 100%);
+  animation:topbarSheen 9s ease-in-out infinite;
+}
+.topbar-track{
+  display:flex;
+  align-items:center;
+  width:max-content;
+  white-space:nowrap;
+  will-change:transform;
+  animation:topbarScroll 28s linear infinite;
+}
+.topbar-track span{
+  display:inline-flex;
+  align-items:center;
+  padding-right:64px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  line-height:1;
+  color:rgba(255,255,255,.92);
+}
+.topbar-track i{
+  font-style:normal;
+  color:var(--gold);
+  margin:0 12px;
+  opacity:.9;
+}
+@keyframes topbarScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-33.333%)}
+}
+@keyframes topbarSheen{
+  0%{transform:translateX(-120%)}
+  55%{transform:translateX(120%)}
+  100%{transform:translateX(120%)}
 }
 
 .header{
   position:sticky;
   top:0;
   z-index:70;
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(250,248,243,.94));
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(17,28,68,.08);
+  box-shadow:0 8px 24px rgba(10,16,35,.04);
 }
-.header-in{
-  min-height:72px;
+.maison-header{
+  min-height:84px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:18px;
+  padding:10px 0;
+}
+.brand-block{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+.brand-logo{
+  width:54px;
+  height:54px;
+  object-fit:contain;
+  flex:0 0 auto;
+}
+.brand-text{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  min-width:0;
+}
+.brand-kicker{
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#7b8296;
+}
+.brand-text strong{
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px;
+  line-height:1;
+  color:var(--navy);
+  font-weight:700;
 }
 .nav{
   display:flex;
@@ -138,62 +219,96 @@ button,input,select,textarea{font:inherit}
   text-transform:uppercase;
   color:var(--muted);
 }
-.nav a:hover{color:var(--blue)}
+.nav a:hover{color:var(--navy)}
+.header-cta{
+  min-height:46px;
+  padding:0 18px;
+  font-size:10px;
+  letter-spacing:.14em;
+  box-shadow:0 12px 24px rgba(201,163,74,.18);
+}
 
-.hero{padding:28px 0 18px}
+.hero{padding:30px 0 20px}
 .hero-card{
-  border-radius:34px;
-  padding:42px;
+  position:relative;
+  overflow:hidden;
+  border-radius:38px;
+  padding:48px;
   background:
-    radial-gradient(circle at 84% 16%, rgba(242,194,48,.18), transparent 24%),
-    radial-gradient(circle at 0% 100%, rgba(255,255,255,.06), transparent 30%),
-    linear-gradient(135deg,#0E1E63 0%, #102A92 58%, #1738BE 100%);
+    radial-gradient(circle at 82% 18%, rgba(201,163,74,.14), transparent 22%),
+    radial-gradient(circle at 14% 88%, rgba(255,255,255,.05), transparent 26%),
+    linear-gradient(135deg,#0A1023 0%, #111C44 42%, #1A2F7A 100%);
   color:#fff;
-  box-shadow:0 28px 70px rgba(19,33,63,.18);
+  box-shadow:0 32px 90px rgba(10,16,35,.20);
+}
+.hero-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent 0%, rgba(201,163,74,.14) 18%, transparent 36%);
+  transform:translateX(-100%);
+  animation:heroSheen 10s ease-in-out infinite;
+}
+.hero-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:38px;
+}
+@keyframes heroSheen{
+  0%{transform:translateX(-100%)}
+  55%{transform:translateX(120%)}
+  100%{transform:translateX(120%)}
 }
 .hero-grid{
   display:grid;
-  grid-template-columns:1.02fr .98fr;
-  gap:28px;
+  grid-template-columns:1.05fr .95fr;
+  gap:34px;
   align-items:center;
 }
 .hero-kicker{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  min-height:32px;
-  padding:0 14px;
+  gap:10px;
+  min-height:34px;
+  padding:0 15px;
   border-radius:999px;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
   font-size:10px;
   font-weight:800;
-  letter-spacing:.14em;
+  letter-spacing:.16em;
   text-transform:uppercase;
+  color:rgba(255,255,255,.88);
 }
 .hero-kicker::before{
   content:"";
-  width:7px;height:7px;border-radius:50%;
-  background:var(--gold);
+  width:8px;height:8px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  box-shadow:0 0 0 4px rgba(201,163,74,.12);
 }
 .hero h1{
-  margin:16px 0 12px;
+  margin:18px 0 14px;
   font-family:'Cormorant Garamond',serif;
-  font-size:58px;
-  line-height:1.02;
-  letter-spacing:-.02em;
+  font-size:68px;
+  line-height:.98;
+  letter-spacing:-.025em;
   color:#fff;
+  max-width:760px;
 }
 .hero h1 em{
   font-style:normal;
-  color:var(--gold);
+  color:var(--gold-light);
 }
 .hero p{
-  margin:0 0 22px;
-  max-width:670px;
-  color:rgba(255,255,255,.84);
+  margin:0 0 24px;
+  max-width:660px;
+  color:rgba(255,255,255,.80);
   font-size:15px;
-  line-height:1.75;
+  line-height:1.9;
 }
 .hero-actions{
   display:flex;
@@ -202,51 +317,57 @@ button,input,select,textarea{font:inherit}
 }
 .hero-meta{
   display:flex;
-  gap:16px;
+  gap:10px;
   flex-wrap:wrap;
-  margin-top:22px;
+  margin-top:24px;
 }
 .hero-meta span{
   display:inline-flex;
   align-items:center;
-  min-height:34px;
-  padding:0 14px;
+  min-height:36px;
+  padding:0 15px;
   border-radius:999px;
-  background:rgba(255,255,255,.08);
+  background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.10);
-  font-size:11px;
-  font-weight:700;
-  color:rgba(255,255,255,.86);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.78);
 }
 
 .hero-feature{
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.18);
-  border-radius:26px;
+  position:relative;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.08));
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:28px;
   padding:18px;
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(14px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
 }
 .feature-badge{
   display:inline-flex;
   align-items:center;
-  gap:6px;
-  padding:6px 12px;
+  gap:7px;
+  padding:7px 13px;
   border-radius:999px;
-  background:linear-gradient(135deg,var(--gold),#f8d35e);
-  color:var(--blue-deep);
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  color:var(--navy);
   font-size:9px;
   font-weight:800;
-  letter-spacing:.14em;
+  letter-spacing:.16em;
   text-transform:uppercase;
-  margin-bottom:12px;
+  margin-bottom:14px;
+  box-shadow:0 10px 22px rgba(201,163,74,.18);
 }
 .carousel{
   position:relative;
   width:100%;
-  border-radius:18px;
+  border-radius:20px;
   overflow:hidden;
-  height:280px;
+  height:300px;
   background:#111;
+  box-shadow:0 16px 40px rgba(0,0,0,.18);
 }
 .carousel-track{
   display:flex;
@@ -263,21 +384,24 @@ button,input,select,textarea{font:inherit}
   width:100%;
   height:100%;
   object-fit:cover;
+  transform:scale(1.02);
+  transition:transform .8s ease;
 }
+.carousel-slide:hover img{transform:scale(1.06)}
 .carousel-slide::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to top,rgba(8,14,34,.62) 0%,transparent 54%);
+  background:linear-gradient(to top,rgba(10,16,35,.72) 0%,rgba(10,16,35,.18) 42%,transparent 70%);
 }
 .carousel-prev,.carousel-next{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  width:34px;height:34px;
+  width:38px;height:38px;
   border:none;
   border-radius:50%;
-  background:rgba(255,255,255,.18);
+  background:rgba(255,255,255,.14);
   color:#fff;
   font-size:22px;
   cursor:pointer;
@@ -285,38 +409,42 @@ button,input,select,textarea{font:inherit}
   align-items:center;
   justify-content:center;
   z-index:2;
+  backdrop-filter:blur(10px);
+  transition:.2s ease;
 }
+.carousel-prev:hover,.carousel-next:hover{background:rgba(255,255,255,.22)}
 .carousel-prev{left:8px}
 .carousel-next{right:8px}
 .carousel-dots{
   display:flex;
   justify-content:center;
-  gap:6px;
-  margin:10px 0 12px;
+  gap:8px;
+  margin:12px 0 14px;
 }
 .carousel-dot{
-  width:6px;height:6px;
+  width:7px;height:7px;
   border-radius:50%;
-  background:rgba(255,255,255,.28);
+  background:rgba(255,255,255,.24);
   border:none;
   cursor:pointer;
+  transition:.2s ease;
 }
 .carousel-dot.active{
-  width:18px;
-  border-radius:3px;
-  background:var(--gold);
+  width:22px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
 }
 .carousel-info h3{
-  margin:0 0 6px;
+  margin:0 0 8px;
   font-family:'Cormorant Garamond',serif;
-  font-size:24px;
-  line-height:1.06;
+  font-size:28px;
+  line-height:1.02;
   color:#fff;
 }
 .carousel-info p{
-  margin:0 0 12px;
+  margin:0 0 14px;
   font-size:13px;
-  line-height:1.55;
+  line-height:1.7;
   color:rgba(255,255,255,.76);
 }
 .carousel-line{
@@ -328,18 +456,20 @@ button,input,select,textarea{font:inherit}
   margin-bottom:8px;
 }
 .carousel-city{
-  font-size:11px;
-  font-weight:700;
-  color:rgba(255,255,255,.70);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.72);
 }
 .badge-date{
-  padding:5px 10px;
+  padding:6px 11px;
   border-radius:999px;
-  background:var(--gold);
-  color:var(--blue-deep);
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  color:var(--navy);
   font-size:9px;
   font-weight:800;
-  letter-spacing:.1em;
+  letter-spacing:.12em;
   text-transform:uppercase;
 }
 .carousel-bottom{
@@ -351,12 +481,12 @@ button,input,select,textarea{font:inherit}
 }
 .carousel-price{
   font-family:'Cormorant Garamond',serif;
-  font-size:17px;
+  font-size:19px;
   font-weight:700;
-  color:var(--gold);
+  color:var(--gold-light);
 }
 .carousel-actions{display:flex;gap:8px;flex-wrap:wrap}
-.carousel-actions .btn{min-height:36px;padding:0 14px;font-size:10px}
+.carousel-actions .btn{min-height:38px;padding:0 14px;font-size:10px}
 
 .promo-bar{
   display:flex;
@@ -365,7 +495,7 @@ button,input,select,textarea{font:inherit}
   gap:10px 6px;
   background:#fff;
   border:1px solid var(--line);
-  border-radius:16px;
+  border-radius:18px;
   padding:14px 20px;
   margin-bottom:16px;
   box-shadow:var(--shadow-soft);
@@ -384,14 +514,23 @@ button,input,select,textarea{font:inherit}
 }
 
 .ticketing-shell{
+  position:relative;
   margin-bottom:18px;
-  padding:28px;
-  border-radius:30px;
+  padding:34px;
+  border-radius:32px;
   background:
-    radial-gradient(circle at top left,rgba(242,194,48,.12),transparent 25%),
-    linear-gradient(180deg,#fffaf0,#fff);
-  border:1px solid rgba(242,194,48,.34);
-  box-shadow:0 18px 40px rgba(242,194,48,.10);
+    radial-gradient(circle at top left,rgba(201,163,74,.14),transparent 26%),
+    linear-gradient(180deg,#FFF9EC 0%, #FFFDF8 100%);
+  border:1px solid rgba(201,163,74,.30);
+  box-shadow:0 20px 46px rgba(201,163,74,.10);
+  overflow:hidden;
+}
+.ticketing-shell::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,163,74,.65),transparent);
 }
 .ticketing-grid{
   display:grid;
@@ -402,53 +541,58 @@ button,input,select,textarea{font:inherit}
 .ticketing-kicker{
   display:inline-flex;
   align-items:center;
-  min-height:30px;
+  min-height:31px;
   padding:0 12px;
   border-radius:999px;
-  background:#fff7dd;
-  border:1px solid rgba(242,194,48,.35);
-  font-size:10px;
+  background:#FFF4D8;
+  border:1px solid rgba(201,163,74,.34);
+  font-size:9px;
   font-weight:800;
-  letter-spacing:.14em;
+  letter-spacing:.16em;
   text-transform:uppercase;
-  color:var(--blue-deep);
-  margin-bottom:12px;
+  color:var(--navy);
+  margin-bottom:14px;
 }
 .ticketing-shell h3{
-  margin:0 0 10px;
+  margin:0 0 12px;
   font-family:'Cormorant Garamond',serif;
-  font-size:40px;
-  line-height:1.02;
-  color:var(--blue-deep);
+  font-size:46px;
+  line-height:.98;
+  color:var(--navy);
+  max-width:720px;
 }
 .ticketing-shell p{
   margin:0;
   max-width:760px;
   font-size:15px;
-  line-height:1.85;
+  line-height:1.9;
   color:var(--muted);
 }
 .ticketing-cards{
   display:grid;
-  gap:12px;
+  gap:14px;
 }
 .ticketing-card{
-  background:#fff;
-  border:1px solid rgba(19,33,63,.08);
-  border-radius:20px;
-  padding:16px;
-  box-shadow:var(--shadow-soft);
+  background:rgba(255,255,255,.80);
+  border:1px solid rgba(17,28,68,.08);
+  border-radius:22px;
+  padding:18px;
+  box-shadow:0 10px 24px rgba(10,16,35,.05);
+  backdrop-filter:blur(8px);
 }
 .ticketing-card strong{
   display:block;
-  margin-bottom:6px;
-  font-size:14px;
-  color:var(--blue-deep);
+  margin-bottom:7px;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--navy);
 }
 .ticketing-card span{
   display:block;
   font-size:13px;
-  line-height:1.65;
+  line-height:1.7;
   color:var(--muted);
 }
 
@@ -457,8 +601,8 @@ button,input,select,textarea{font:inherit}
   border-radius:32px;
   background:
     linear-gradient(180deg,rgba(255,255,255,.98),rgba(255,255,255,.94)),
-    radial-gradient(circle at top left,rgba(242,194,48,.10),transparent 28%);
-  border:1px solid rgba(19,33,63,.08);
+    radial-gradient(circle at top left,rgba(201,163,74,.08),transparent 28%);
+  border:1px solid rgba(17,28,68,.08);
   box-shadow:0 24px 60px rgba(19,33,63,.08);
   position:relative;
 }
@@ -496,7 +640,7 @@ button,input,select,textarea{font:inherit}
   font-family:'Cormorant Garamond',serif;
   font-size:54px;
   line-height:1.01;
-  color:var(--blue-deep);
+  color:var(--navy);
   letter-spacing:-.02em;
 }
 .discover-head p{
@@ -513,14 +657,14 @@ button,input,select,textarea{font:inherit}
   min-height:74px;
   padding:0 20px;
   background:#fff;
-  border:1px solid rgba(19,33,63,.10);
+  border:1px solid rgba(17,28,68,.10);
   border-radius:22px;
   box-shadow:0 10px 28px rgba(19,33,63,.05);
   margin-bottom:18px;
 }
 .search-icon{
   font-size:22px;
-  color:var(--blue-deep);
+  color:var(--navy);
   opacity:.7;
 }
 .discover-search input{
@@ -541,13 +685,13 @@ button,input,select,textarea{font:inherit}
   min-height:46px;
   padding:0 18px;
   border-radius:999px;
-  border:1px solid rgba(19,33,63,.10);
+  border:1px solid rgba(17,28,68,.10);
   background:#fff;
   font-size:11px;
   font-weight:800;
   letter-spacing:.10em;
   text-transform:uppercase;
-  color:var(--blue-deep);
+  color:var(--navy);
   cursor:pointer;
   transition:.2s;
 }
@@ -556,9 +700,9 @@ button,input,select,textarea{font:inherit}
   box-shadow:0 8px 22px rgba(19,33,63,.08);
 }
 .topic-chip.active{
-  background:var(--blue-deep);
+  background:var(--navy);
   color:#fff;
-  border-color:var(--blue-deep);
+  border-color:var(--navy);
 }
 .discover-divider{
   height:1px;
@@ -587,7 +731,7 @@ button,input,select,textarea{font:inherit}
   width:100%;
   height:52px;
   border-radius:16px;
-  border:1px solid rgba(19,33,63,.10);
+  border:1px solid rgba(17,28,68,.10);
   background:#fff;
   padding:0 14px;
   color:var(--text);
@@ -596,7 +740,7 @@ button,input,select,textarea{font:inherit}
 .field textarea{
   width:100%;
   border-radius:16px;
-  border:1px solid rgba(19,33,63,.10);
+  border:1px solid rgba(17,28,68,.10);
   background:#fff;
   padding:12px 14px;
   color:var(--text);
@@ -605,7 +749,7 @@ button,input,select,textarea{font:inherit}
   resize:vertical;
 }
 .field input:focus,.field select:focus,.field textarea:focus{
-  border-color:var(--blue);
+  border-color:var(--royal);
   box-shadow:0 0 0 3px rgba(23,56,190,.10);
 }
 
@@ -629,7 +773,7 @@ button,input,select,textarea{font:inherit}
   border-radius:50%;
   border:1px solid var(--line);
   background:#fff;
-  color:var(--blue-deep);
+  color:var(--navy);
   font-size:20px;
   cursor:pointer;
   flex:0 0 auto;
@@ -650,7 +794,7 @@ button,input,select,textarea{font:inherit}
   font-family:'Cormorant Garamond',serif;
   font-size:34px;
   line-height:1;
-  color:var(--blue-deep);
+  color:var(--navy);
 }
 .month-pills-track{
   display:flex;
@@ -677,15 +821,15 @@ button,input,select,textarea{font:inherit}
   box-shadow:0 10px 26px rgba(19,33,63,.10);
 }
 .month-luxury-item.active{
-  border-color:rgba(242,194,48,.82);
+  border-color:rgba(201,163,74,.82);
   background:linear-gradient(135deg,#fffaf0,#fff);
-  box-shadow:0 14px 30px rgba(242,194,48,.12);
+  box-shadow:0 14px 30px rgba(201,163,74,.12);
 }
 .month-luxury-item strong{
   display:block;
   font-family:'Cormorant Garamond',serif;
   font-size:22px;
-  color:var(--blue-deep);
+  color:var(--navy);
   line-height:1;
 }
 .month-luxury-item span{
@@ -708,7 +852,7 @@ button,input,select,textarea{font:inherit}
 .cal-title{
   font-family:'Cormorant Garamond',serif;
   font-size:38px;
-  color:var(--blue-deep);
+  color:var(--navy);
   line-height:1.04;
 }
 .calendar{
@@ -742,13 +886,13 @@ button,input,select,textarea{font:inherit}
 }
 .day.other{opacity:.35}
 .day.today{
-  outline:2px solid var(--blue);
+  outline:2px solid var(--royal);
   outline-offset:2px;
   background:#fff;
 }
 .day.symbolic{
   background:linear-gradient(135deg,#fff9e8,#fff);
-  border-color:rgba(242,194,48,.30);
+  border-color:rgba(201,163,74,.30);
 }
 .day.has{
   cursor:pointer;
@@ -764,12 +908,12 @@ button,input,select,textarea{font:inherit}
   outline:3px solid var(--gold);
   outline-offset:2px;
   background:#fff;
-  box-shadow:0 10px 24px rgba(242,194,48,.16);
+  box-shadow:0 10px 24px rgba(201,163,74,.16);
 }
 .dnum{
   font-size:13px;
   font-weight:800;
-  color:var(--blue-deep);
+  color:var(--navy);
 }
 .dots{
   display:flex;
@@ -787,7 +931,7 @@ button,input,select,textarea{font:inherit}
   padding:5px 6px;
   border-radius:10px;
   background:#eef2ff;
-  color:var(--blue);
+  color:var(--royal);
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
@@ -801,11 +945,11 @@ button,input,select,textarea{font:inherit}
   justify-content:center;
   font-size:11px;
   font-weight:800;
-  background:var(--blue);
+  background:var(--royal);
   color:#fff;
 }
 .day-count.busy{
-  background:var(--red);
+  background:var(--wine);
   animation:pulse 1.8s infinite;
 }
 @keyframes pulse{
@@ -859,7 +1003,7 @@ button,input,select,textarea{font:inherit}
   font-weight:800;
   letter-spacing:.14em;
   text-transform:uppercase;
-  color:var(--blue);
+  color:var(--royal);
   margin-bottom:10px;
 }
 .editorial-main h3{
@@ -867,7 +1011,7 @@ button,input,select,textarea{font:inherit}
   font-family:'Cormorant Garamond',serif;
   font-size:38px;
   line-height:1.03;
-  color:var(--blue-deep);
+  color:var(--navy);
 }
 .editorial-main p{
   margin:0 0 16px;
@@ -900,7 +1044,7 @@ button,input,select,textarea{font:inherit}
   font-family:'Cormorant Garamond',serif;
   font-size:22px;
   line-height:1.1;
-  color:var(--blue-deep);
+  color:var(--navy);
 }
 .editorial-mini p{
   margin:0 0 12px;
@@ -921,7 +1065,7 @@ button,input,select,textarea{font:inherit}
   margin:0;
   font-family:'Cormorant Garamond',serif;
   font-size:30px;
-  color:var(--blue-deep);
+  color:var(--navy);
 }
 
 .timeline{
@@ -944,7 +1088,7 @@ button,input,select,textarea{font:inherit}
   font-family:'Cormorant Garamond',serif;
   font-size:42px;
   line-height:1;
-  color:var(--blue-deep);
+  color:var(--navy);
 }
 .timeline-date-month{
   font-size:10px;
@@ -974,7 +1118,7 @@ button,input,select,textarea{font:inherit}
   font-family:'Cormorant Garamond',serif;
   font-size:22px;
   line-height:1.1;
-  color:var(--blue-deep);
+  color:var(--navy);
 }
 .timeline-body p{
   margin:0 0 10px;
@@ -1017,7 +1161,7 @@ button,input,select,textarea{font:inherit}
 .card-location{
   font-size:12px;
   font-weight:700;
-  color:var(--blue);
+  color:var(--royal);
   margin-bottom:2px;
 }
 .card .date{
@@ -1032,7 +1176,7 @@ button,input,select,textarea{font:inherit}
   font-family:'Cormorant Garamond',serif;
   font-size:22px;
   line-height:1.08;
-  color:var(--blue-deep);
+  color:var(--navy);
 }
 .card p{
   margin:0;
@@ -1104,7 +1248,7 @@ button,input,select,textarea{font:inherit}
 .card-past img{filter:saturate(.88)}
 .konbit-ticket{
   background:linear-gradient(135deg,#f2c230,#ffe9a3);
-  color:var(--blue-deep);
+  color:var(--navy);
 }
 .external-ticket{
   background:#eef2ff;
@@ -1119,7 +1263,7 @@ button,input,select,textarea{font:inherit}
   margin:0;
   font-family:'Cormorant Garamond',serif;
   font-size:30px;
-  color:var(--blue-deep);
+  color:var(--navy);
 }
 .map-layout{
   display:grid;
@@ -1159,7 +1303,7 @@ button,input,select,textarea{font:inherit}
   display:block;
   font-size:16px;
   line-height:1.35;
-  color:var(--blue-deep);
+  color:var(--navy);
   margin-bottom:4px;
 }
 .side-item span{
@@ -1190,7 +1334,7 @@ button,input,select,textarea{font:inherit}
   margin:0;
   font-family:'Cormorant Garamond',serif;
   font-size:40px;
-  color:var(--blue-deep);
+  color:var(--navy);
 }
 .train-grid{
   display:grid;
@@ -1228,7 +1372,7 @@ button,input,select,textarea{font:inherit}
   font-family:'Cormorant Garamond',serif;
   font-size:30px;
   line-height:1.08;
-  color:var(--blue-deep);
+  color:var(--navy);
 }
 .train p{
   margin:0;
@@ -1262,8 +1406,22 @@ button,input,select,textarea{font:inherit}
 }
 
 .partners{
-  background:linear-gradient(135deg,#0E1E63 0%,#1738BE 100%);
-  padding:44px 0;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(201,163,74,.10), transparent 18%),
+    radial-gradient(circle at 80% 10%, rgba(255,255,255,.05), transparent 18%),
+    linear-gradient(135deg,#0A1023 0%, #111C44 42%, #1A2F7A 100%);
+  padding:60px 0;
+}
+.partners::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent 0%, rgba(201,163,74,.08) 24%, transparent 48%);
+  transform:translateX(-100%);
+  animation:heroSheen 13s ease-in-out infinite;
 }
 .partners-head{
   margin-bottom:28px;
@@ -1272,79 +1430,94 @@ button,input,select,textarea{font:inherit}
 .partners-head .small{
   font-size:10px;
   font-weight:800;
-  letter-spacing:.16em;
+  letter-spacing:.18em;
   text-transform:uppercase;
-  color:rgba(255,255,255,.62);
-  margin-bottom:8px;
+  color:rgba(255,255,255,.58);
+  margin-bottom:10px;
 }
 .partners-head h3{
-  margin:0 0 10px;
+  margin:0 0 12px;
   font-family:'Cormorant Garamond',serif;
-  font-size:40px;
+  font-size:48px;
+  line-height:1;
   color:#fff;
 }
 .partners-head p{
   color:rgba(255,255,255,.76);
   font-size:15px;
-  max-width:560px;
+  max-width:620px;
   margin:0 auto;
-  line-height:1.75;
+  line-height:1.85;
 }
 .sponsors{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  gap:20px;
 }
 .sponsor-card{
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:24px;
-  padding:24px;
-  backdrop-filter:blur(10px);
+  position:relative;
+  background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.06));
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:28px;
+  padding:26px;
+  backdrop-filter:blur(14px);
   display:flex;
   flex-direction:column;
-  gap:14px;
+  gap:16px;
+  overflow:hidden;
+}
+.sponsor-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:28px;
+  border:1px solid rgba(255,255,255,.05);
+  pointer-events:none;
+}
+.sponsor-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 26px 54px rgba(0,0,0,.16);
 }
 .sponsor-tier{
   display:inline-flex;
-  padding:5px 12px;
+  padding:6px 12px;
   border-radius:999px;
-  font-size:10px;
+  font-size:9px;
   font-weight:800;
-  letter-spacing:.10em;
+  letter-spacing:.14em;
   text-transform:uppercase;
   width:fit-content;
 }
 .sponsor-price{
   font-family:'Cormorant Garamond',serif;
-  font-size:36px;
+  font-size:40px;
   font-weight:700;
   color:#fff;
-  line-height:1;
+  line-height:.95;
 }
 .sponsor-price span{
-  font-size:14px;
-  font-weight:400;
-  color:rgba(255,255,255,.6);
+  font-size:13px;
+  font-weight:500;
+  color:rgba(255,255,255,.56);
 }
 .sponsor-card h4{
   margin:0;
   font-family:'Cormorant Garamond',serif;
-  font-size:24px;
+  font-size:26px;
   color:#fff;
 }
 .sponsor-list{
   margin:0;
-  padding-left:16px;
+  padding-left:18px;
   display:flex;
   flex-direction:column;
-  gap:6px;
+  gap:7px;
   flex:1;
 }
 .sponsor-list li{
   font-size:13px;
   color:rgba(255,255,255,.82);
-  line-height:1.55;
+  line-height:1.65;
 }
 
 .submit{
@@ -1353,7 +1526,7 @@ button,input,select,textarea{font:inherit}
   gap:20px;
 }
 .submit-info{
-  background:linear-gradient(135deg,#0E1E63,#1738BE);
+  background:linear-gradient(135deg,#0A1023,#111C44 55%,#1A2F7A);
   color:#fff;
   border-radius:28px;
   padding:30px;
@@ -1413,53 +1586,72 @@ button,input,select,textarea{font:inherit}
 .success.show{display:block}
 
 .footer{
-  background:var(--blue-deep);
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 12% 14%, rgba(201,163,74,.10), transparent 16%),
+    linear-gradient(180deg,#0A1023 0%, #101A3C 100%);
   color:rgba(255,255,255,.72);
-  padding:48px 0 24px;
+  padding:64px 0 26px;
+}
+.footer::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,163,74,.5),transparent);
 }
 .footer a:hover{
-  color:var(--gold)!important;
-  transition:.15s;
+  color:var(--gold-light)!important;
+  transition:.18s;
 }
 .foot-divider{
-  width:32px;
+  width:44px;
   height:3px;
-  background:var(--gold);
-  border-radius:2px;
-  margin-bottom:14px;
+  background:linear-gradient(90deg,var(--gold-light),var(--gold));
+  border-radius:999px;
+  margin-bottom:16px;
+  box-shadow:0 0 18px rgba(201,163,74,.26);
 }
 .foot-grid{
   display:grid;
-  grid-template-columns:1.3fr 1fr 1fr;
-  gap:24px;
-  margin-bottom:26px;
+  grid-template-columns:1.45fr .9fr .9fr;
+  gap:30px;
+  margin-bottom:28px;
 }
 .footer .brandname{
   font-family:'Cormorant Garamond',serif;
-  font-size:30px;
+  font-size:34px;
   font-weight:700;
   color:#fff;
-  margin-bottom:8px;
+  margin-bottom:10px;
+  letter-spacing:.01em;
 }
 .footer h4{
-  margin:0 0 10px;
+  margin:0 0 12px;
   font-family:'Cormorant Garamond',serif;
-  font-size:20px;
+  font-size:22px;
   color:#fff;
 }
 .footer p,.footer a{
   font-size:14px;
-  line-height:1.8;
-  color:rgba(255,255,255,.85);
+  line-height:1.9;
+  color:rgba(255,255,255,.82);
 }
 .foot-bottom{
   padding-top:18px;
-  border-top:1px solid rgba(255,255,255,.10);
+  border-top:1px solid rgba(255,255,255,.08);
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:12px;
   flex-wrap:wrap;
+}
+.foot-bottom p{
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.56);
 }
 
 .modal{
@@ -1507,7 +1699,7 @@ button,input,select,textarea{font:inherit}
   font-family:'Cormorant Garamond',serif;
   font-size:42px;
   line-height:1.02;
-  color:var(--blue-deep);
+  color:var(--navy);
 }
 .modal-b p{
   font-size:15px;
@@ -1543,6 +1735,25 @@ button,input,select,textarea{font:inherit}
   color:var(--text);
 }
 
+.panel,.card,.ticketing-card,.sponsor-card,.train,.side-item,.month-luxury-item{
+  transition:transform .24s ease, box-shadow .24s ease, border-color .24s ease, background .24s ease;
+}
+.card:hover,.ticketing-card:hover,.train:hover,.side-item:hover,.month-luxury-item:hover{
+  transform:translateY(-3px);
+}
+.card,.editorial-main,.editorial-mini,.side,.map-box,.form,.submit-info,.ticketing-shell,.discover-shell,.month-nav-wrap{
+  box-shadow:0 18px 44px rgba(10,16,35,.07);
+}
+.card:hover,.editorial-main:hover,.editorial-mini:hover,.sponsor-card:hover{
+  box-shadow:0 26px 58px rgba(10,16,35,.11);
+}
+.tag,.hero-meta span,.editorial-meta span{
+  transition:transform .18s ease, background .18s ease;
+}
+.tag:hover,.hero-meta span:hover,.editorial-meta span:hover{
+  transform:translateY(-1px);
+}
+
 @media (max-width:1100px){
   .hero-grid,
   .ticketing-grid,
@@ -1555,20 +1766,53 @@ button,input,select,textarea{font:inherit}
   .train-grid{grid-template-columns:repeat(2,1fr)}
   .sponsors{grid-template-columns:1fr}
 }
+
 @media (max-width:820px){
+  .topbar-marquee{height:38px}
+  .topbar-track span{
+    padding-right:42px;
+    font-size:9px;
+    letter-spacing:.12em;
+  }
+
   .nav{display:none}
+  .maison-header{
+    min-height:auto;
+    padding:12px 0;
+    flex-direction:column;
+    align-items:stretch;
+    gap:12px;
+  }
+  .brand-block{
+    justify-content:center;
+    text-align:center;
+  }
+  .brand-logo{
+    width:48px;
+    height:48px;
+  }
+  .brand-text strong{
+    font-size:24px;
+  }
+  .header-cta{
+    width:100%;
+    min-height:50px;
+    border-radius:18px;
+    justify-content:center;
+  }
+
   .hero-card{padding:22px}
-  .hero h1{font-size:32px;line-height:1.06}
+  .hero h1{font-size:34px;line-height:1.05}
   .hero p{font-size:14px}
-  .carousel{height:210px}
-  .carousel-info h3{font-size:19px}
+  .carousel{height:220px}
+  .carousel-info h3{font-size:21px}
   .promo-sep{display:none}
   .promo-bar{gap:8px;padding:12px 16px}
   .promo-item{background:#f6f5f1;border-radius:999px;padding:5px 12px;font-size:12px}
   .ticketing-shell{padding:20px;border-radius:24px}
-  .ticketing-shell h3{font-size:30px}
+  .ticketing-shell h3{font-size:32px}
   .discover-shell{padding:20px;border-radius:24px}
-  .discover-head h3{font-size:32px;line-height:1.08}
+  .discover-head h3{font-size:34px;line-height:1.08}
   .discover-head p{font-size:14px;line-height:1.7}
   .discover-search{min-height:58px;padding:0 14px;border-radius:16px}
   .discover-search input{font-size:15px}
@@ -1588,19 +1832,29 @@ button,input,select,textarea{font:inherit}
   #map{height:380px}
   .modal-box img{height:220px}
   .modal-b h5{font-size:32px}
+  .partners-head h3{font-size:34px}
 }
+
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  🇭🇹 &nbsp;Événements · Billetterie · Sélection éditoriale · Entrepreneuriat &nbsp;— &nbsp;Konbit Agency
+<div class="topbar topbar-marquee">
+  <div class="topbar-track">
+    <span>🇭🇹 Maison Konbit <i>•</i> Agenda signature <i>•</i> Billetterie <i>•</i> Scène haïtienne en France</span>
+    <span>🇭🇹 Maison Konbit <i>•</i> Agenda signature <i>•</i> Billetterie <i>•</i> Scène haïtienne en France</span>
+    <span>🇭🇹 Maison Konbit <i>•</i> Agenda signature <i>•</i> Billetterie <i>•</i> Scène haïtienne en France</span>
+  </div>
 </div>
 
 <header class="header">
-  <div class="wrap header-in">
-    <div class="brand">
-      <img src="https://cdn.shopify.com/s/files/1/0079/5557/8943/files/Logo_KONBIT_AGENCY.png?v=1773622950" alt="Konbit Agency" style="height:44px;width:auto;display:block">
+  <div class="wrap maison-header">
+    <div class="brand-block">
+      <img src="https://cdn.shopify.com/s/files/1/0079/5557/8943/files/Logo_KONBIT_AGENCY.png?v=1773622950" alt="Konbit Agency" class="brand-logo">
+      <div class="brand-text">
+        <span class="brand-kicker">Maison éditoriale</span>
+        <strong>Konbit Agency</strong>
+      </div>
     </div>
 
     <nav class="nav">
@@ -1611,7 +1865,7 @@ button,input,select,textarea{font:inherit}
       <a href="#soumettre">Publier</a>
     </nav>
 
-    <a href="#soumettre" class="btn btn-gold">Publier sur Konbit</a>
+    <a href="#soumettre" class="btn btn-gold header-cta">Publier sur Konbit</a>
   </div>
 </header>
 
@@ -1620,12 +1874,12 @@ button,input,select,textarea{font:inherit}
     <div class="hero-card">
       <div class="hero-grid">
         <div>
-          <div class="hero-kicker">Plateforme éditoriale & communautaire</div>
-          <h1>Les rendez-vous haïtiens en France, portés par <em>Konbit Agency</em></h1>
+          <div class="hero-kicker">Maison éditoriale · Agenda signature · Billetterie</div>
+          <h1>Maison Konbit signe les rendez-vous haïtiens qui comptent en France</h1>
           <p>
-            Une plateforme pensée pour découvrir les temps forts haïtiens en France :
-            culture, musique, rencontres, initiatives, entrepreneuriat, adresses choisies
-            et billetterie nouvelle génération.
+            Une lecture éditoriale des rendez-vous haïtiens en France : soirées choisies,
+            moments de culture, initiatives remarquables, adresses sélectionnées et billetterie
+            portée avec plus d’élégance, plus de clarté et plus de stature.
           </p>
 
           <div class="hero-actions">
@@ -1636,7 +1890,7 @@ button,input,select,textarea{font:inherit}
           <div class="hero-meta">
             <span>Agenda communautaire</span>
             <span>Billetterie Konbit en développement</span>
-            <span>Visibilité éditoriale pour les organisateurs</span>
+            <span>Visibilité choisie pour les organisateurs</span>
           </div>
         </div>
 
@@ -1666,40 +1920,40 @@ button,input,select,textarea{font:inherit}
         </div>
       </div>
     </div>
-  </div>
+</div>
 </section>
 
 <section class="section" id="agenda">
   <div class="wrap">
     <div class="promo-bar">
-      <span class="promo-item">🗓 <strong>222</strong> rendez-vous référencés</span>
+      <span class="promo-item">🗓 <strong id="promoCount">14</strong> rendez-vous référencés</span>
       <span class="promo-sep">·</span>
       <span class="promo-item">📍 France entière</span>
       <span class="promo-sep">·</span>
-      <span class="promo-item"><a href="#soumettre" style="color:var(--blue);font-weight:800">Publier sur Konbit</a></span>
+      <span class="promo-item"><a href="#soumettre" style="color:var(--royal);font-weight:800">Publier sur Konbit</a></span>
       <span class="promo-sep">·</span>
-      <span class="promo-item"><a href="#partenaires" style="color:var(--blue);font-weight:800">Rayonnement de marque</a></span>
+      <span class="promo-item"><a href="#partenaires" style="color:var(--royal);font-weight:800">Présence partenaire</a></span>
     </div>
 
     <section class="ticketing-shell" id="billetterie-konbit">
       <div class="ticketing-grid">
         <div>
           <div class="ticketing-kicker">Billetterie Konbit — ouverture progressive</div>
-          <h3>Une billetterie plus juste, plus directe, plus communautaire</h3>
+          <h3>Une billetterie plus juste, plus lisible, plus statutaire</h3>
           <p>
-            Konbit Agency développe une solution de billetterie pensée pour les organisateurs et le public
-            de la communauté haïtienne en France. Plus lisible, plus accessible et plus élégante que les
-            standards du marché, elle accompagne les rendez-vous qui méritent une diffusion maîtrisée.
+            Maison Konbit développe une lecture plus claire de la billetterie pour les organisateurs
+            et le public de la scène haïtienne en France. Plus élégante, plus directe et mieux éditorialisée,
+            elle accompagne les rendez-vous qui méritent une diffusion maîtrisée.
           </p>
         </div>
         <div class="ticketing-cards">
           <div class="ticketing-card">
             <strong>Événement pilote</strong>
-            <span>Femme en Lumière inaugure la logique billetterie Konbit sur la plateforme.</span>
+            <span>Femme en Lumière inaugure la logique de billetterie Konbit sur la plateforme.</span>
           </div>
           <div class="ticketing-card">
             <strong>Lecture claire</strong>
-            <span>Les événements affichent désormais leur statut : Konbit, partenaire ou accès libre.</span>
+            <span>Chaque événement affiche un statut distinct : Konbit, partenaire ou accès libre.</span>
           </div>
           <div class="ticketing-card">
             <strong>Étude organisateurs</strong>
@@ -1736,15 +1990,6 @@ button,input,select,textarea{font:inherit}
 
       <div class="discover-advanced">
         <div class="field">
-          <label>Période</label>
-          <select id="year">
-            <option value="all">Toutes les années</option>
-            <option value="2026">2026</option>
-            <option value="2027">2027</option>
-          </select>
-        </div>
-
-        <div class="field">
           <label>Univers</label>
           <select id="category">
             <option value="all">Tous les univers</option>
@@ -1766,13 +2011,18 @@ button,input,select,textarea{font:inherit}
         </div>
 
         <div class="field">
-          <label>Type</label>
-          <select id="status">
+          <label>Billetterie</label>
+          <select id="ticketFilter">
             <option value="all">Tous</option>
-            <option value="published">Publié</option>
-            <option value="recurring">Récurrent</option>
-            <option value="watch">À suivre</option>
+            <option value="konbit">Billetterie Konbit</option>
+            <option value="external">Billetterie partenaire</option>
+            <option value="info">Accès libre / information</option>
           </select>
+        </div>
+
+        <div class="field">
+          <label>Mois</label>
+          <select id="monthJump"></select>
         </div>
 
         <div class="discover-reset">
@@ -1814,7 +2064,7 @@ button,input,select,textarea{font:inherit}
         <span><i class="sw" style="background:#d97706"></i> Gastronomie</span>
         <span><i class="sw" style="background:#6B49D9"></i> Business</span>
         <span><i class="sw" style="background:#2E7B67"></i> Association</span>
-        <span><i class="sw" style="background:#F2C230"></i> Jour symbolique</span>
+        <span><i class="sw" style="background:#C9A34A"></i> Jour symbolique</span>
       </div>
     </div>
   </div>
@@ -1891,16 +2141,18 @@ button,input,select,textarea{font:inherit}
 <section class="partners" id="partenaires">
   <div class="wrap">
     <div class="partners-head">
-      <div class="small">Visibilité & rayonnement</div>
-      <h3>Partenaires de la plateforme</h3>
+      <div class="small">Maison Konbit · Partenaires</div>
+      <h3>Associer son nom à une scène, une communauté, une signature</h3>
       <p>
-        Associez votre nom à une plateforme éditoriale et communautaire dédiée aux rendez-vous haïtiens en France.
+        Maison Konbit ouvre des espaces de présence choisis pour les marques, structures,
+        institutions et partenaires souhaitant s’inscrire avec justesse dans l’écosystème
+        haïtien en France.
       </p>
     </div>
 
     <div class="sponsors">
       <div class="sponsor-card">
-        <div class="sponsor-tier" style="background:var(--gold);color:var(--blue-deep)">✦ Présence signature</div>
+        <div class="sponsor-tier" style="background:var(--gold);color:var(--navy)">✦ Présence signature</div>
         <div class="sponsor-price">À partir de 300 €<span>/mois</span></div>
         <h4>Rayonnement de marque</h4>
         <ul class="sponsor-list">
@@ -1912,8 +2164,8 @@ button,input,select,textarea{font:inherit}
         <a href="#soumettre" class="btn btn-gold">Demander une étude</a>
       </div>
 
-      <div class="sponsor-card" style="border:2px solid var(--gold)">
-        <div class="sponsor-tier" style="background:rgba(242,194,48,.14);color:var(--gold)">✦ Mise en lumière éditoriale</div>
+      <div class="sponsor-card" style="border:2px solid rgba(201,163,74,.45)">
+        <div class="sponsor-tier" style="background:rgba(201,163,74,.14);color:var(--gold-light)">✦ Mise en lumière éditoriale</div>
         <div class="sponsor-price">150 €<span>/événement</span></div>
         <h4>Rendez-vous signature</h4>
         <ul class="sponsor-list">
@@ -2034,7 +2286,7 @@ button,input,select,textarea{font:inherit}
           </div>
 
           <button type="submit" class="btn btn-gold">Envoyer la demande</button>
-          <div class="success" id="success">✓ Demande reçue. L’équipe Konbit reviendra vers vous après étude éditoriale et technique.</div>
+          <div class="success" id="success">✓ Formulaire validé en démonstration. Le raccordement d’envoi réel doit encore être mis en place.</div>
         </form>
       </div>
     </div>
@@ -2046,10 +2298,11 @@ button,input,select,textarea{font:inherit}
     <div class="foot-grid">
       <div>
         <div class="foot-divider"></div>
-        <div class="brandname">Konbit Agency</div>
+        <div class="brandname">Maison Konbit</div>
         <p>
-          Plateforme communautaire et éditoriale dédiée aux rendez-vous haïtiens en France :
-          culture, rencontres, entrepreneuriat, billetterie et visibilité.
+          Maison Konbit compose une lecture éditoriale et communautaire des rendez-vous haïtiens
+          en France : culture, rencontres, entrepreneuriat, billetterie et mise en lumière
+          des initiatives qui portent la scène.
         </p>
       </div>
 
@@ -2070,8 +2323,8 @@ button,input,select,textarea{font:inherit}
     </div>
 
     <div class="foot-bottom">
-      <p>© Konbit Agency — Plateforme communautaire haïtienne en France</p>
-      <p>Éditorial · Agenda · Billetterie · 2026</p>
+      <p>© Maison Konbit — Signature éditoriale haïtienne en France</p>
+      <p>Agenda · Billetterie · Partenaires · 2026</p>
     </div>
   </div>
 </footer>
@@ -2140,22 +2393,17 @@ window.addEventListener("DOMContentLoaded", function () {
     function localISO(dateObj){
       return `${dateObj.getFullYear()}-${String(dateObj.getMonth()+1).padStart(2,"0")}-${String(dateObj.getDate()).padStart(2,"0")}`;
     }
-
     function getTodayIso(){ return localISO(new Date()); }
-
     function fmt(date){
       return new Date(date + "T12:00:00").toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"});
     }
-
     function weekend(date){
       const d = new Date(date + "T12:00:00").getDay();
       return d===0 || d===6;
     }
-
     function isPastEvent(eventDate){
       return eventDate < getTodayIso();
     }
-
     function sortEventsChronologically(events){
       return [...events].sort((a,b)=>new Date(a.date+"T12:00:00") - new Date(b.date+"T12:00:00"));
     }
@@ -2204,24 +2452,24 @@ window.addEventListener("DOMContentLoaded", function () {
 
     const el = {
       search:document.getElementById("search"),
-      year:document.getElementById("year"),
       category:document.getElementById("category"),
       city:document.getElementById("city"),
-      status:document.getElementById("status"),
+      ticketFilter:document.getElementById("ticketFilter"),
+      monthJump:document.getElementById("monthJump"),
       calendar:document.getElementById("calendar"),
       calTitle:document.getElementById("calTitle"),
       grid:document.getElementById("grid"),
       countText:document.getElementById("countText"),
       trainGrid:document.getElementById("trainGrid"),
-      sideList:document.getElementById("sideList")
+      sideList:document.getElementById("sideList"),
+      promoCount:document.getElementById("promoCount")
     };
 
     const state = {
       search:"",
-      year:"all",
       category:"all",
       city:"all",
-      status:"all",
+      ticketFilter:"all",
       quick:"all",
       currentMonth:"2026-03",
       filtered:[],
@@ -2253,6 +2501,18 @@ window.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+    function populateMonthJump(){
+      el.monthJump.innerHTML = monthKeys.map(key=>{
+        const [y,m] = key.split("-");
+        return `<option value="${key}">${monthNames[parseInt(m,10)-1]} ${y}</option>`;
+      }).join("");
+      el.monthJump.value = state.currentMonth;
+    }
+
+    function updatePromoCount(){
+      if(el.promoCount) el.promoCount.textContent = baseEvents.length;
+    }
+
     function getTicketBadge(e){
       if(!e.ticketing) return "";
       if(e.ticketing.mode==="konbit") return '<span class="tag konbit-ticket">✦ Billetterie Konbit</span>';
@@ -2262,9 +2522,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
     function getTicketButtonLabel(e){
       if(!e.ticketing) return "Voir les infos";
-      if(e.ticketing.mode==="konbit") return "Réserver avec Konbit";
+      if(e.ticketing.mode==="konbit") return "Préinscription Konbit";
       if(e.ticketing.mode==="external") return "Voir la billetterie";
-      return "Voir les infos";
+      return "Informations";
     }
 
     function getTicketUrl(e){
@@ -2286,6 +2546,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
       const [y,m] = state.currentMonth.split("-");
       if(current) current.textContent = `${monthNames[parseInt(m,10)-1]} ${y}`;
+      if(el.monthJump) el.monthJump.value = state.currentMonth;
 
       box.innerHTML = monthKeys.map(key=>{
         const [yy,mm] = key.split("-");
@@ -2310,18 +2571,17 @@ window.addEventListener("DOMContentLoaded", function () {
 
     function filterEvents(){
       state.search = (el.search.value||"").trim().toLowerCase();
-      state.year = el.year.value;
       state.category = el.category.value;
       state.city = el.city.value;
-      state.status = el.status.value;
+      state.ticketFilter = el.ticketFilter.value;
 
       state.filtered = baseEvents.filter(e=>{
         const hay = `${e.title} ${e.city} ${e.location} ${e.organizer||""} ${e.excerpt||""} ${e.description||""}`.toLowerCase();
+        const ticketMode = e.ticketing?.mode || "info";
         return e.date.startsWith(state.currentMonth)
-          && (state.year==="all" || e.date.startsWith(state.year+"-"))
           && (state.category==="all" || e.category===state.category)
           && (state.city==="all" || e.city===state.city)
-          && (state.status==="all" || e.status===state.status)
+          && (state.ticketFilter==="all" || ticketMode===state.ticketFilter)
           && (!state.search || hay.includes(state.search))
           && quickMatch(e);
       });
@@ -2563,7 +2823,12 @@ window.addEventListener("DOMContentLoaded", function () {
       `).join("");
     }
 
-    let map = null, layer = null;
+    let map = null, layer = null, markerIndex = {}, sideItemIndex = {};
+
+    function highlightSideItem(eventId){
+      Object.values(sideItemIndex).forEach(item=>item.classList.remove("active"));
+      if(sideItemIndex[eventId]) sideItemIndex[eventId].classList.add("active");
+    }
 
     function renderMap(){
       const mapContainer = document.getElementById("map");
@@ -2577,6 +2842,8 @@ window.addEventListener("DOMContentLoaded", function () {
         layer = L.layerGroup().addTo(map);
       }
 
+      markerIndex = {};
+      sideItemIndex = {};
       layer.clearLayers();
       el.sideList.innerHTML = "";
 
@@ -2587,6 +2854,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }).addTo(layer);
 
         marker.bindPopup(`<strong>${e.title}</strong><br>${fmt(e.date)}<br>${e.city}`);
+        markerIndex[e.id] = marker;
 
         const item = document.createElement("div");
         item.className = "side-item";
@@ -2594,8 +2862,10 @@ window.addEventListener("DOMContentLoaded", function () {
         item.onclick=()=>{
           map.setView([e.lat,e.lng],10);
           marker.openPopup();
+          highlightSideItem(e.id);
           openModal(e);
         };
+        sideItemIndex[e.id] = item;
         el.sideList.appendChild(item);
       });
 
@@ -2603,7 +2873,11 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     const featuredByMonth = {
-      "2026-03":["e11","e5","e12","e14"]
+      "2026-01":["e1"],
+      "2026-02":["e2","e3"],
+      "2026-03":["e11","e5","e12","e14"],
+      "2026-04":["e7","e8"],
+      "2026-05":["e9","e10"]
     };
 
     let carouselEvents = [], carouselIdx = 0, carouselTimer = null;
@@ -2697,6 +2971,33 @@ window.addEventListener("DOMContentLoaded", function () {
     if(cprev) cprev.onclick=()=>{ clearInterval(carouselTimer); goToSlide(carouselIdx-1); startCarousel(); };
     if(cnext) cnext.onclick=()=>{ clearInterval(carouselTimer); goToSlide(carouselIdx+1); startCarousel(); };
 
+    function buildICS(event){
+      const start = event.date.replace(/-/g,"");
+      const endDate = new Date(event.date + "T12:00:00");
+      endDate.setDate(endDate.getDate() + 1);
+      const end = localISO(endDate).replace(/-/g,"");
+      const title = (event.title || "").replace(/,/g,"\\,").replace(/;/g,"\\;");
+      const description = (event.description || event.excerpt || "").replace(/\n/g,"\\n");
+      const location = (event.location || "").replace(/,/g,"\\,").replace(/;/g,"\\;");
+      const url = getTicketUrl(event);
+
+      return [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Maison Konbit//Agenda//FR",
+        "BEGIN:VEVENT",
+        `UID:${event.id}@maison-konbit`,
+        `DTSTAMP:${new Date().toISOString().replace(/[-:]/g,"").split(".")[0]}Z`,
+        `DTSTART;VALUE=DATE:${start}`,
+        `DTEND;VALUE=DATE:${end}`,
+        `SUMMARY:${title}`,
+        `DESCRIPTION:${description}${url ? "\\n\\nBilletterie : " + url : ""}`,
+        `LOCATION:${location}`,
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+    }
+
     function openModal(e){
       const g = id=>document.getElementById(id);
       const mp = g("modalPoster");
@@ -2713,13 +3014,14 @@ window.addEventListener("DOMContentLoaded", function () {
       const mtags = g("modalTags");
       const mticket = g("modalTicketing");
       const mmap = g("modalMap");
+      const mcal = g("modalCal");
 
       if(mp){
         mp.src = e.poster || getFallback(e.category);
         mp.onerror=function(){ this.src = getFallback(e.category); };
       }
       if(mt) mt.textContent = e.title;
-      if(mml) mml.innerHTML = `<span style="font-size:13px;font-weight:700;color:var(--blue)">📍 ${e.city}</span>`;
+      if(mml) mml.innerHTML = `<span style="font-size:13px;font-weight:700;color:var(--royal)">📍 ${e.city}</span>`;
       if(me) me.textContent = e.excerpt || "";
       if(md) md.textContent = fmt(e.date);
       if(mc) mc.textContent = e.city;
@@ -2733,12 +3035,30 @@ window.addEventListener("DOMContentLoaded", function () {
         mlink.textContent = getTicketButtonLabel(e);
       }
       if(mtags) mtags.innerHTML = `<span class="tag ${e.category}">${e.category}</span>${getTicketBadge(e)}`;
+
       if(mmap){
         mmap.onclick=()=>{
           if(map && typeof e.lat==="number"){
             map.setView([e.lat,e.lng],10);
+            if(markerIndex[e.id]) markerIndex[e.id].openPopup();
+            highlightSideItem(e.id);
             document.getElementById("carte").scrollIntoView({behavior:"smooth"});
           }
+        };
+      }
+
+      if(mcal){
+        mcal.onclick = () => {
+          const ics = buildICS(e);
+          const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `${e.title.toLowerCase().replace(/[^a-z0-9]+/gi,"-")}.ics`;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(url);
         };
       }
 
@@ -2762,10 +3082,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
     function reset(){
       el.search.value = "";
-      el.year.value = "all";
       el.category.value = "all";
       el.city.value = "all";
-      el.status.value = "all";
+      el.ticketFilter.value = "all";
       state.quick = "all";
       document.querySelectorAll(".topic-chip").forEach(b=>b.classList.remove("active"));
       const a = document.querySelector('.topic-chip[data-quick="all"]');
@@ -2775,13 +3094,24 @@ window.addEventListener("DOMContentLoaded", function () {
 
     initSelectedDay();
     populateCities();
+    populateMonthJump();
+    updatePromoCount();
     renderTrainings();
     apply();
 
-    [el.search,el.year,el.category,el.city,el.status].forEach(n=>{
+    [el.search,el.category,el.city,el.ticketFilter].forEach(n=>{
       n.addEventListener("input",apply);
       n.addEventListener("change",apply);
     });
+
+    if(el.monthJump){
+      el.monthJump.addEventListener("change",()=>{
+        state.currentMonth = el.monthJump.value;
+        const t = getTodayIso();
+        state.selectedDay = t.startsWith(state.currentMonth) ? t : null;
+        apply();
+      });
+    }
 
     document.querySelectorAll(".topic-chip").forEach(btn=>{
       btn.onclick=()=>{
@@ -2852,7 +3182,7 @@ window.addEventListener("DOMContentLoaded", function () {
           const fc = document.querySelector(`[data-open="${evts[0].id}"]`);
           if(fc){
             fc.closest(".card").scrollIntoView({behavior:"smooth",block:"center"});
-            fc.closest(".card").style.outline="2px solid var(--blue)";
+            fc.closest(".card").style.outline="2px solid var(--royal)";
             setTimeout(()=>{fc.closest(".card").style.outline="";},1800);
           }
         }

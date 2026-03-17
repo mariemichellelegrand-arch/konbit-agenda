@@ -548,7 +548,9 @@ html, body { overflow-x: hidden; }
   </div>
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>(() => {
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+(() => {
  const monthNames = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
  const monthShort = ["Jan","Fév","Mar","Avr","Mai","Juin","Juil","Aoû","Sep","Oct","Nov","Déc"];
  const weekdays = ["Lu","Ma","Me","Je","Ve","Sa","Di"];

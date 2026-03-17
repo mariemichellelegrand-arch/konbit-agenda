@@ -723,8 +723,8 @@ html, body { overflow-x: hidden; }
  });
  }
  function updateStats(){
- document.getElementById("statEvents").textContent = allEvents.length;
- document.getElementById("kpiTotal").textContent = allEvents.length;
+ var se=document.getElementById("statEvents"); if(se) se.textContent=allEvents.length;
+ var kt=document.getElementById("kpiTotal"); if(kt) kt.textContent=allEvents.length;
  }
  const featuredByMonth = {
  "2026-03": ["e11","e5","e12","e14"] 
@@ -802,10 +802,10 @@ html, body { overflow-x: hidden; }
  if(carouselEvents.length < 2) return;
  carouselTimer = setInterval(() => goToSlide(carouselIdx+1), 4500);
  }
- document.getElementById("carouselPrev").onclick = () => {
+ var _cp=document.getElementById("carouselPrev"); if(_cp) _cp.onclick = () => {
  clearInterval(carouselTimer); goToSlide(carouselIdx-1); startCarouselTimer();
  };
- document.getElementById("carouselNext").onclick = () => {
+ var _cn=document.getElementById("carouselNext"); if(_cn) _cn.onclick = () => {
  clearInterval(carouselTimer); goToSlide(carouselIdx+1); startCarouselTimer();
  };
  function buildMonths(){
@@ -1097,9 +1097,9 @@ html, body { overflow-x: hidden; }
  };
  }
  function closeCalPopup(){ document.getElementById("calPopup").classList.remove("open"); }
- document.getElementById("calPopupClose").onclick = closeCalPopup;
- document.getElementById("calPopup").onclick = (e) => { if(e.target.id==="calPopup") closeCalPopup(); };
- document.getElementById("calendar").addEventListener("click", function(e){
+ var _cc=document.getElementById("calPopupClose"); if(_cc) _cc.onclick=closeCalPopup;
+ var _cpop=document.getElementById("calPopup"); if(_cpop) _cpop.onclick=(e)=>{ if(e.target.id==="calPopup") closeCalPopup(); };
+ var _cal=document.getElementById("calendar"); if(_cal) _cal.addEventListener("click", function(e){
  const day = e.target.closest("[data-dayiso]");
  if(!day) return;
  const iso = day.dataset.dayiso;

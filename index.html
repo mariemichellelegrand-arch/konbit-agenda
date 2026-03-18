@@ -7,7 +7,7 @@
 <title>Konbit Agency | Entrepreneuriat diaspora haïtienne Europe · Éducation financière · Agenda & Billetterie</title>
 <meta name="description" content="Konbit Agency est une plateforme européenne dédiée à l’entrepreneuriat, à l’éducation financière et à la visibilité des initiatives de la diaspora haïtienne et afro-caribéenne. Agenda, formations, business, billetterie et opportunités.">
 <meta name="keywords" content="entrepreneuriat diaspora, diaspora haïtienne Europe, éducation financière, business diaspora, agenda entrepreneurs, billetterie diaspora, networking diaspora, plateforme entrepreneuriale, événements haïtiens Europe, formation business diaspora">
-<meta name="theme-color" content="#111C44">
+<meta name="theme-color" content="#0D1B4C">
 
 <meta property="og:title" content="Konbit Agency | Entrepreneuriat, éducation financière, agenda & billetterie">
 <meta property="og:description" content="La plateforme européenne dédiée à l’entrepreneuriat, à l’éducation financière et à la visibilité business de la diaspora haïtienne et afro-caribéenne.">
@@ -21,6 +21,8 @@
 <meta name="twitter:description" content="Plateforme européenne dédiée à la diaspora haïtienne et afro-caribéenne : business, formation, agenda, billetterie et opportunités.">
 <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0079/5557/8943/files/Logo_KONBIT_AGENCY.png?v=1773622950">
 
+<link rel="canonical" href="https://www.konbitagency.com/">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -28,29 +30,38 @@
 
 <style>
 :root{
-  --ink:#0A1023;
-  --navy:#111C44;
-  --royal:#1A2F7A;
-  --cobalt:#2747B8;
-  --gold:#C9A34A;
-  --gold-light:#E8D7A7;
-  --champagne:#F6F0E4;
-  --ivory:#F8F5EE;
-  --pearl:#FCFBF8;
-  --wine:#6E2132;
-  --forest:#1F5C4E;
+  --ink:#081327;
+  --navy:#0D1B4C;
+  --navy-deep:#08153A;
+  --royal:#16358A;
+  --cobalt:#2A4FBF;
+  --red:#D82234;
+  --red-deep:#B91527;
+  --gold:#D4A63A;
+  --gold-deep:#B7861F;
+  --gold-light:#F0D98C;
+  --champagne:#F8F1E3;
+  --ivory:#FBF7EF;
+  --pearl:#FFFCF6;
+  --wine:#7A1F32;
+  --forest:#1E6A57;
   --text:#16213E;
-  --muted:#6C748A;
-  --line:rgba(17,28,68,.10);
-  --line-strong:rgba(17,28,68,.16);
+  --muted:#68728B;
+  --line:rgba(13,27,76,.10);
+  --line-strong:rgba(13,27,76,.16);
   --surface:#FFFFFF;
-  --surface-soft:#FBFAF7;
-  --bg:linear-gradient(180deg,#F8F5EE 0%,#F6F3EC 100%);
+  --surface-soft:#FCFAF5;
+  --bg:linear-gradient(180deg,#FBF7EF 0%,#F6F0E4 100%);
   --radius:26px;
   --radius-xl:34px;
-  --shadow:0 24px 60px rgba(10,16,35,.10);
-  --shadow-soft:0 10px 28px rgba(10,16,35,.06);
+  --shadow:0 24px 60px rgba(8,19,39,.10);
+  --shadow-soft:0 10px 28px rgba(8,19,39,.06);
   --container:min(1240px,calc(100% - 28px));
+
+  --haiti-red:#D82234;
+  --haiti-blue:#16358A;
+  --fr-holiday:#D4A63A;
+  --haiti-memorial:#7A1F32;
 }
 
 *{box-sizing:border-box}
@@ -67,6 +78,15 @@ img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 button,input,select,textarea{font:inherit}
 .wrap{width:var(--container);margin:auto}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline:3px solid rgba(212,166,58,.92);
+  outline-offset:3px;
+}
 
 .btn{
   display:inline-flex;
@@ -86,17 +106,17 @@ button,input,select,textarea{font:inherit}
 }
 .btn:hover{transform:translateY(-2px)}
 .btn-gold{
-  background:linear-gradient(135deg,#e7d29a 0%, #c9a34a 55%, #b88d2f 100%);
+  background:linear-gradient(135deg,#f0d98c 0%, #d4a63a 55%, #b7861f 100%);
   color:var(--navy);
-  border:1px solid rgba(17,28,68,.06);
-  box-shadow:0 10px 20px rgba(201,163,74,.18), inset 0 1px 0 rgba(255,255,255,.35);
+  border:1px solid rgba(13,27,76,.06);
+  box-shadow:0 10px 20px rgba(212,166,58,.18), inset 0 1px 0 rgba(255,255,255,.35);
 }
 .btn-gold:hover{
-  box-shadow:0 14px 26px rgba(201,163,74,.22), inset 0 1px 0 rgba(255,255,255,.35);
+  box-shadow:0 14px 26px rgba(212,166,58,.22), inset 0 1px 0 rgba(255,255,255,.35);
 }
 .btn-outline{
-  background:rgba(255,255,255,.92);
-  border:1px solid rgba(17,28,68,.10);
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(13,27,76,.10);
   color:var(--navy);
 }
 .btn-dark{
@@ -123,7 +143,7 @@ button,input,select,textarea{font:inherit}
 .topbar-marquee{
   position:relative;
   overflow:hidden;
-  background:linear-gradient(135deg,#0b1434 0%, #162a6b 52%, #0f1e4e 100%);
+  background:linear-gradient(135deg,var(--navy-deep) 0%, var(--royal) 52%, var(--haiti-blue) 100%);
   border-bottom:1px solid rgba(255,255,255,.08);
   color:rgba(255,255,255,.92);
   height:42px;
@@ -135,7 +155,7 @@ button,input,select,textarea{font:inherit}
   position:absolute;
   inset:0;
   pointer-events:none;
-  background:linear-gradient(90deg,transparent 0%, rgba(201,163,74,.10) 20%, transparent 40%, transparent 100%);
+  background:linear-gradient(90deg,transparent 0%, rgba(212,166,58,.10) 20%, transparent 40%, transparent 100%);
   animation:topbarSheen 9s ease-in-out infinite;
 }
 .topbar-track{
@@ -177,10 +197,10 @@ button,input,select,textarea{font:inherit}
   position:sticky;
   top:0;
   z-index:70;
-  background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(250,248,243,.94));
+  background:linear-gradient(180deg,rgba(255,255,255,.97),rgba(251,247,239,.94));
   backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(17,28,68,.08);
-  box-shadow:0 8px 24px rgba(10,16,35,.04);
+  border-bottom:1px solid rgba(13,27,76,.08);
+  box-shadow:0 8px 24px rgba(8,19,39,.04);
 }
 .header-in{
   min-height:84px;
@@ -240,7 +260,7 @@ button,input,select,textarea{font:inherit}
   padding:0 18px;
   font-size:10px;
   letter-spacing:.14em;
-  box-shadow:0 12px 24px rgba(201,163,74,.18);
+  box-shadow:0 12px 24px rgba(212,166,58,.18);
 }
 
 .hero{padding:30px 0 20px}
@@ -250,18 +270,18 @@ button,input,select,textarea{font:inherit}
   border-radius:38px;
   padding:48px;
   background:
-    radial-gradient(circle at 82% 18%, rgba(201,163,74,.14), transparent 22%),
-    radial-gradient(circle at 14% 88%, rgba(255,255,255,.05), transparent 26%),
-    linear-gradient(135deg,#0A1023 0%, #111C44 42%, #1A2F7A 100%);
+    radial-gradient(circle at 82% 18%, rgba(212,166,58,.14), transparent 22%),
+    radial-gradient(circle at 14% 88%, rgba(216,34,52,.10), transparent 26%),
+    linear-gradient(135deg,var(--navy-deep) 0%, var(--navy) 42%, var(--royal) 100%);
   color:#fff;
-  box-shadow:0 32px 90px rgba(10,16,35,.20);
+  box-shadow:0 32px 90px rgba(8,19,39,.20);
 }
 .hero-card::before{
   content:"";
   position:absolute;
   inset:0;
   pointer-events:none;
-  background:linear-gradient(90deg,transparent 0%, rgba(201,163,74,.14) 18%, transparent 36%);
+  background:linear-gradient(90deg,transparent 0%, rgba(212,166,58,.14) 18%, transparent 36%);
   transform:translateX(-100%);
   animation:heroSheen 10s ease-in-out infinite;
 }
@@ -303,7 +323,7 @@ button,input,select,textarea{font:inherit}
   content:"";
   width:8px;height:8px;border-radius:50%;
   background:linear-gradient(135deg,var(--gold-light),var(--gold));
-  box-shadow:0 0 0 4px rgba(201,163,74,.12);
+  box-shadow:0 0 0 4px rgba(212,166,58,.12);
 }
 .hero h1{
   margin:18px 0 14px;
@@ -369,7 +389,7 @@ button,input,select,textarea{font:inherit}
   letter-spacing:.16em;
   text-transform:uppercase;
   margin-bottom:14px;
-  box-shadow:0 10px 22px rgba(201,163,74,.18);
+  box-shadow:0 10px 22px rgba(212,166,58,.18);
 }
 .carousel{
   position:relative;
@@ -403,7 +423,7 @@ button,input,select,textarea{font:inherit}
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to top,rgba(10,16,35,.72) 0%,rgba(10,16,35,.18) 42%,transparent 70%);
+  background:linear-gradient(to top,rgba(8,19,39,.72) 0%,rgba(8,19,39,.18) 42%,transparent 70%);
 }
 .carousel-prev,.carousel-next{
   position:absolute;
@@ -544,10 +564,10 @@ button,input,select,textarea{font:inherit}
   padding:34px;
   border-radius:32px;
   background:
-    radial-gradient(circle at top left,rgba(201,163,74,.14),transparent 26%),
-    linear-gradient(180deg,#FFF9EC 0%, #FFFDF8 100%);
-  border:1px solid rgba(201,163,74,.30);
-  box-shadow:0 20px 46px rgba(201,163,74,.10);
+    radial-gradient(circle at top left,rgba(212,166,58,.14),transparent 26%),
+    linear-gradient(180deg,#fff8ea 0%, #fffdf8 100%);
+  border:1px solid rgba(212,166,58,.30);
+  box-shadow:0 20px 46px rgba(212,166,58,.10);
   overflow:hidden;
 }
 .ticketing-shell::before{
@@ -555,7 +575,7 @@ button,input,select,textarea{font:inherit}
   position:absolute;
   top:0;left:0;right:0;
   height:1px;
-  background:linear-gradient(90deg,transparent,rgba(201,163,74,.65),transparent);
+  background:linear-gradient(90deg,transparent,rgba(212,166,58,.65),transparent);
 }
 .ticketing-grid{
   display:grid;
@@ -570,7 +590,7 @@ button,input,select,textarea{font:inherit}
   padding:0 12px;
   border-radius:999px;
   background:#FFF4D8;
-  border:1px solid rgba(201,163,74,.34);
+  border:1px solid rgba(212,166,58,.34);
   font-size:9px;
   font-weight:800;
   letter-spacing:.16em;
@@ -598,11 +618,11 @@ button,input,select,textarea{font:inherit}
   gap:14px;
 }
 .ticketing-card{
-  background:rgba(255,255,255,.80);
-  border:1px solid rgba(17,28,68,.08);
+  background:rgba(255,255,255,.82);
+  border:1px solid rgba(13,27,76,.08);
   border-radius:22px;
   padding:18px;
-  box-shadow:0 10px 24px rgba(10,16,35,.05);
+  box-shadow:0 10px 24px rgba(8,19,39,.05);
   backdrop-filter:blur(8px);
 }
 .ticketing-card strong{
@@ -626,8 +646,8 @@ button,input,select,textarea{font:inherit}
   border-radius:32px;
   background:
     linear-gradient(180deg,rgba(255,255,255,.98),rgba(255,255,255,.94)),
-    radial-gradient(circle at top left,rgba(201,163,74,.08),transparent 28%);
-  border:1px solid rgba(17,28,68,.08);
+    radial-gradient(circle at top left,rgba(212,166,58,.08),transparent 28%);
+  border:1px solid rgba(13,27,76,.08);
   box-shadow:0 24px 60px rgba(19,33,63,.08);
   position:relative;
 }
@@ -744,9 +764,9 @@ button,input,select,textarea{font:inherit}
   box-shadow:0 10px 26px rgba(19,33,63,.10);
 }
 .month-luxury-item.active{
-  border-color:rgba(201,163,74,.82);
+  border-color:rgba(212,166,58,.82);
   background:linear-gradient(135deg,#fffaf0,#fff);
-  box-shadow:0 14px 30px rgba(201,163,74,.12);
+  box-shadow:0 14px 30px rgba(212,166,58,.12);
 }
 .month-luxury-item strong{
   display:block;
@@ -815,12 +835,12 @@ button,input,select,textarea{font:inherit}
 }
 .day.symbolic{
   background:linear-gradient(135deg,#fff9e8,#fff);
-  border-color:rgba(201,163,74,.30);
+  border-color:rgba(212,166,58,.30);
 }
 .day.has{
   cursor:pointer;
   background:linear-gradient(135deg,#eef2ff,#fff);
-  border-color:rgba(23,56,190,.18);
+  border-color:rgba(22,53,138,.18);
 }
 .day.has:hover{
   background:linear-gradient(135deg,#dde5ff,#f0f4ff);
@@ -831,7 +851,7 @@ button,input,select,textarea{font:inherit}
   outline:3px solid var(--gold);
   outline-offset:2px;
   background:#fff;
-  box-shadow:0 10px 24px rgba(201,163,74,.16);
+  box-shadow:0 10px 24px rgba(212,166,58,.16);
 }
 .dnum{
   font-size:13px;
@@ -1160,22 +1180,24 @@ button,input,select,textarea{font:inherit}
   text-transform:uppercase;
 }
 .culture{background:#fff0f3;color:#D7264D}
-.musique{background:#eef2ff;color:#1738BE}
+.musique{background:#eef2ff;color:#16358A}
 .gastronomie{background:#fff7ed;color:#d97706}
 .business{background:#f5f3ff;color:#6B49D9}
 .association{background:#ecfdf5;color:#2E7B67}
 .formation{background:#ecfeff;color:#0f766e}
 .conference{background:#fefce8;color:#a16207}
+.ferie{background:#fff7df;color:#9A6A00}
+.haiti{background:#f9e9ed;color:#7A1F32}
 .finished{background:#f3f4f6;color:#6b7280}
 .card-past{opacity:.84}
 .card-past img{filter:saturate(.88)}
 .konbit-ticket{
-  background:linear-gradient(135deg,#f2c230,#ffe9a3);
+  background:linear-gradient(135deg,#f0d98c,#ffe9a3);
   color:var(--navy);
 }
 .external-ticket{
   background:#eef2ff;
-  color:#1738BE;
+  color:#16358A;
 }
 .info-ticket{
   background:#f3f4f6;
@@ -1220,7 +1242,7 @@ button,input,select,textarea{font:inherit}
 }
 .side-item:hover,.side-item.active{
   background:#eef2ff;
-  border-color:rgba(23,56,190,.16);
+  border-color:rgba(22,53,138,.16);
 }
 .side-item strong{
   display:block;
@@ -1289,7 +1311,7 @@ button,input,select,textarea{font:inherit}
   text-transform:uppercase;
 }
 .free{background:#ecfdf5;color:#166534}
-.mode{background:#eef2ff;color:#1738BE}
+.mode{background:#eef2ff;color:#16358A}
 .train h4{
   margin:0;
   font-family:'Cormorant Garamond',serif;
@@ -1332,9 +1354,9 @@ button,input,select,textarea{font:inherit}
   position:relative;
   overflow:hidden;
   background:
-    radial-gradient(circle at 20% 20%, rgba(201,163,74,.10), transparent 18%),
+    radial-gradient(circle at 20% 20%, rgba(212,166,58,.10), transparent 18%),
     radial-gradient(circle at 80% 10%, rgba(255,255,255,.05), transparent 18%),
-    linear-gradient(135deg,#0A1023 0%, #111C44 42%, #1A2F7A 100%);
+    linear-gradient(135deg,var(--navy-deep) 0%, var(--navy) 42%, var(--royal) 100%);
   padding:60px 0;
 }
 .partners::before{
@@ -1342,7 +1364,7 @@ button,input,select,textarea{font:inherit}
   position:absolute;
   inset:0;
   pointer-events:none;
-  background:linear-gradient(90deg,transparent 0%, rgba(201,163,74,.08) 24%, transparent 48%);
+  background:linear-gradient(90deg,transparent 0%, rgba(212,166,58,.08) 24%, transparent 48%);
   transform:translateX(-100%);
   animation:heroSheen 13s ease-in-out infinite;
 }
@@ -1449,7 +1471,7 @@ button,input,select,textarea{font:inherit}
   gap:20px;
 }
 .submit-info{
-  background:linear-gradient(135deg,#0A1023,#111C44 55%,#1A2F7A);
+  background:linear-gradient(135deg,var(--navy-deep),var(--navy) 55%,var(--royal));
   color:#fff;
   border-radius:28px;
   padding:30px;
@@ -1507,7 +1529,7 @@ button,input,select,textarea{font:inherit}
   width:100%;
   height:52px;
   border-radius:16px;
-  border:1px solid rgba(17,28,68,.10);
+  border:1px solid rgba(13,27,76,.10);
   background:#fff;
   padding:0 14px;
   color:var(--text);
@@ -1516,7 +1538,7 @@ button,input,select,textarea{font:inherit}
 .field textarea{
   width:100%;
   border-radius:16px;
-  border:1px solid rgba(17,28,68,.10);
+  border:1px solid rgba(13,27,76,.10);
   background:#fff;
   padding:12px 14px;
   color:var(--text);
@@ -1526,7 +1548,7 @@ button,input,select,textarea{font:inherit}
 }
 .field input:focus,.field select:focus,.field textarea:focus{
   border-color:var(--royal);
-  box-shadow:0 0 0 3px rgba(23,56,190,.10);
+  box-shadow:0 0 0 3px rgba(22,53,138,.10);
 }
 .success{
   display:none;
@@ -1545,8 +1567,8 @@ button,input,select,textarea{font:inherit}
   position:relative;
   overflow:hidden;
   background:
-    radial-gradient(circle at 12% 14%, rgba(201,163,74,.10), transparent 16%),
-    linear-gradient(180deg,#0A1023 0%, #101A3C 100%);
+    radial-gradient(circle at 12% 14%, rgba(212,166,58,.10), transparent 16%),
+    linear-gradient(180deg,var(--navy-deep) 0%, #101A3C 100%);
   color:rgba(255,255,255,.72);
   padding:64px 0 26px;
 }
@@ -1555,7 +1577,7 @@ button,input,select,textarea{font:inherit}
   position:absolute;
   top:0;left:0;right:0;
   height:1px;
-  background:linear-gradient(90deg,transparent,rgba(201,163,74,.5),transparent);
+  background:linear-gradient(90deg,transparent,rgba(212,166,58,.5),transparent);
 }
 .footer a:hover{
   color:var(--gold-light)!important;
@@ -1567,7 +1589,7 @@ button,input,select,textarea{font:inherit}
   background:linear-gradient(90deg,var(--gold-light),var(--gold));
   border-radius:999px;
   margin-bottom:16px;
-  box-shadow:0 0 18px rgba(201,163,74,.26);
+  box-shadow:0 0 18px rgba(212,166,58,.26);
 }
 .foot-grid{
   display:grid;
@@ -1942,11 +1964,14 @@ button,input,select,textarea{font:inherit}
 
       <div class="legend">
         <span><i class="sw" style="background:#D7264D"></i> Culture</span>
-        <span><i class="sw" style="background:#1738BE"></i> Musique</span>
+        <span><i class="sw" style="background:#16358A"></i> Musique</span>
         <span><i class="sw" style="background:#d97706"></i> Gastronomie</span>
         <span><i class="sw" style="background:#6B49D9"></i> Business</span>
         <span><i class="sw" style="background:#2E7B67"></i> Association</span>
-        <span><i class="sw" style="background:#C9A34A"></i> Jour symbolique</span>
+        <span><i class="sw" style="background:#0f766e"></i> Formation</span>
+        <span><i class="sw" style="background:#a16207"></i> Conférence</span>
+        <span><i class="sw" style="background:#D4A63A"></i> Jours fériés</span>
+        <span><i class="sw" style="background:#7A1F32"></i> Dates haïtiennes</span>
       </div>
     </div>
   </div>
@@ -2044,8 +2069,8 @@ button,input,select,textarea{font:inherit}
         <a href="#soumettre" class="btn btn-gold">Demander une étude</a>
       </div>
 
-      <div class="sponsor-card" style="border:2px solid rgba(201,163,74,.45)">
-        <div class="sponsor-tier" style="background:rgba(201,163,74,.14);color:var(--gold-light)">✦ Mise en avant premium</div>
+      <div class="sponsor-card" style="border:2px solid rgba(212,166,58,.45)">
+        <div class="sponsor-tier" style="background:rgba(212,166,58,.14);color:var(--gold-light)">✦ Mise en avant premium</div>
         <div class="sponsor-price">150 €<span>/événement</span></div>
         <h4>Événement signature</h4>
         <ul class="sponsor-list">
@@ -2078,12 +2103,12 @@ button,input,select,textarea{font:inherit}
     <div class="submit">
       <div class="submit-info">
         <div class="pill">Publication · Billetterie · Visibilité</div>
-        <h3>Publier un événement ou une initiative sur Konbit Agency</h3>
+        <h3>Publier un événement, demander une étude de billetterie ou exprimer un intérêt</h3>
         <p>
           Konbit Agency sélectionne, structure et met en visibilité les événements, formations, initiatives et opportunités qui contribuent à l’essor entrepreneurial, financier et économique de la diaspora.
         </p>
         <p>
-          Publication, accompagnement éditorial, étude de billetterie et mise en lumière commerciale peuvent être envisagés selon la nature du projet, son audience et son potentiel.
+          Ce formulaire permet soit de soumettre un événement à publier, soit de demander une mise en relation avec Konbit Agency pour une billetterie, une étude de diffusion ou une préinscription encadrée.
         </p>
       </div>
 
@@ -2238,6 +2263,18 @@ button,input,select,textarea{font:inherit}
   </div>
 </div>
 
+<div class="modal" id="symbolicModal">
+  <div class="modal-box" style="max-width:720px">
+    <button class="close" id="closeSymbolicModal" aria-label="Fermer la fenêtre" type="button">×</button>
+    <div class="modal-b">
+      <div class="tags" id="symbolicTags" style="margin-bottom:10px"></div>
+      <div class="modal-meta-line" id="symbolicMetaLine"></div>
+      <h5 id="symbolicTitle"></h5>
+      <p id="symbolicText"></p>
+    </div>
+  </div>
+</div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 window.addEventListener("DOMContentLoaded", function () {
@@ -2246,12 +2283,14 @@ window.addEventListener("DOMContentLoaded", function () {
     const weekdays = ["Lu","Ma","Me","Je","Ve","Sa","Di"];
     const colors = {
       culture:"#D7264D",
-      musique:"#1738BE",
+      musique:"#16358A",
       gastronomie:"#d97706",
       business:"#6B49D9",
       association:"#2E7B67",
       formation:"#0f766e",
-      conference:"#a16207"
+      conference:"#a16207",
+      ferie:"#D4A63A",
+      haiti:"#7A1F32"
     };
 
     const fallbackPoster = "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80";
@@ -2264,7 +2303,9 @@ window.addEventListener("DOMContentLoaded", function () {
         business:"https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
         conference:"https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
         formation:"https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80",
-        association:"https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80"
+        association:"https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
+        ferie:"https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=1200&q=80",
+        haiti:"https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80"
       };
       return map[cat] || fallbackPoster;
     }
@@ -2277,7 +2318,9 @@ window.addEventListener("DOMContentLoaded", function () {
         business:"Business",
         association:"Association",
         formation:"Formation",
-        conference:"Conférence"
+        conference:"Conférence",
+        ferie:"Jour férié",
+        haiti:"Mémoire haïtienne"
       };
       return map[cat] || cat || "Business";
     }
@@ -2339,12 +2382,145 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     const symbolicDays = {
-      "2026-01-01":[{title:"Indépendance d'Haïti",category:"culture"},{title:"Soup Joumou",category:"gastronomie"}],
-      "2026-01-02":[{title:"Jour des Aïeux",category:"culture"}],
-      "2026-05-18":[{title:"Fête du drapeau haïtien",category:"culture"}],
-      "2027-01-01":[{title:"Indépendance d'Haïti",category:"culture"},{title:"Soup Joumou",category:"gastronomie"}],
-      "2027-01-02":[{title:"Jour des Aïeux",category:"culture"}],
-      "2027-05-18":[{title:"Fête du drapeau haïtien",category:"culture"}]
+      "2026-01-01":[
+        {title:"Jour de l’An",category:"ferie",text:"Début de l’année civile."},
+        {title:"Indépendance d’Haïti",category:"haiti",text:"Le 1er janvier marque la proclamation de l’indépendance d’Haïti en 1804."},
+        {title:"Soup Joumou",category:"gastronomie",text:"La soupe joumou est un symbole de liberté, de dignité et de souveraineté haïtienne."}
+      ],
+      "2026-01-02":[
+        {title:"Jour des Aïeux",category:"haiti",text:"Journée de mémoire consacrée aux ancêtres et aux héros de l’indépendance."}
+      ],
+      "2026-01-12":[
+        {title:"Mémoire du 12 janvier 2010",category:"haiti",text:"Date de recueillement liée au séisme dévastateur du 12 janvier 2010 et à la mémoire des victimes."}
+      ],
+      "2026-02-15":[
+        {title:"Carnaval d’Haïti — Dimanche gras",category:"haiti",text:"Ouverture du grand temps carnavalesque 2026."}
+      ],
+      "2026-02-16":[
+        {title:"Carnaval d’Haïti — Lundi gras",category:"haiti",text:"Deuxième journée du carnaval 2026."}
+      ],
+      "2026-02-17":[
+        {title:"Carnaval d’Haïti — Mardi gras",category:"haiti",text:"Point culminant du carnaval 2026."}
+      ],
+      "2026-04-06":[
+        {title:"Lundi de Pâques",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2026-05-01":[
+        {title:"Fête du Travail",category:"ferie",text:"Jour férié en France."},
+        {title:"Fête de l’Agriculture et du Travail",category:"haiti",text:"Date importante du calendrier haïtien."}
+      ],
+      "2026-05-08":[
+        {title:"Victoire du 8 mai 1945",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2026-05-14":[
+        {title:"Ascension",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2026-05-18":[
+        {title:"Fête du drapeau haïtien",category:"haiti",text:"Le 18 mai est l’un des grands marqueurs symboliques de l’unité nationale haïtienne."}
+      ],
+      "2026-05-22":[
+        {title:"Repère mémoriel du 22 mai",category:"haiti",text:"Date intégrée ici comme repère de mémoire et de célébration identitaire lié au bicolore et aux rassemblements diaspora."}
+      ],
+      "2026-05-25":[
+        {title:"Lundi de Pentecôte",category:"ferie",text:"Jour férié / repère de calendrier en France."}
+      ],
+      "2026-07-14":[
+        {title:"Fête nationale française",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2026-08-01":[
+        {title:"Août — mois de mémoire nationale",category:"haiti",text:"Repère éditorial ajouté pour marquer le mois d’août dans la programmation diaspora. Vertières reste historiquement célébrée le 18 novembre."}
+      ],
+      "2026-08-15":[
+        {title:"Assomption",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2026-10-17":[
+        {title:"Mémoire de Dessalines",category:"haiti",text:"Date de mémoire liée à l’assassinat de Jean-Jacques Dessalines."}
+      ],
+      "2026-11-01":[
+        {title:"Toussaint",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2026-11-02":[
+        {title:"Jour des morts",category:"haiti",text:"Temps de recueillement et de mémoire."}
+      ],
+      "2026-11-11":[
+        {title:"Armistice 1918",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2026-11-18":[
+        {title:"Bataille de Vertières",category:"haiti",text:"La bataille de Vertières du 18 novembre 1803 marque l’un des grands sommets de la lutte pour l’indépendance."}
+      ],
+      "2026-12-25":[
+        {title:"Noël",category:"ferie",text:"Jour férié en France."}
+      ],
+
+      "2027-01-01":[
+        {title:"Jour de l’An",category:"ferie",text:"Début de l’année civile."},
+        {title:"Indépendance d’Haïti",category:"haiti",text:"Le 1er janvier marque la proclamation de l’indépendance d’Haïti en 1804."},
+        {title:"Soup Joumou",category:"gastronomie",text:"La soupe joumou reste l’un des grands symboles de l’indépendance."}
+      ],
+      "2027-01-02":[
+        {title:"Jour des Aïeux",category:"haiti",text:"Journée de mémoire consacrée aux ancêtres et aux héros de l’indépendance."}
+      ],
+      "2027-01-12":[
+        {title:"Mémoire du 12 janvier 2010",category:"haiti",text:"Date de recueillement liée au séisme du 12 janvier 2010."}
+      ],
+      "2027-02-07":[
+        {title:"Carnaval d’Haïti — Dimanche gras",category:"haiti",text:"Ouverture du grand temps carnavalesque 2027."}
+      ],
+      "2027-02-08":[
+        {title:"Carnaval d’Haïti — Lundi gras",category:"haiti",text:"Deuxième journée du carnaval 2027."}
+      ],
+      "2027-02-09":[
+        {title:"Carnaval d’Haïti — Mardi gras",category:"haiti",text:"Point culminant du carnaval 2027."}
+      ],
+      "2027-03-29":[
+        {title:"Lundi de Pâques",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2027-05-01":[
+        {title:"Fête du Travail",category:"ferie",text:"Jour férié en France."},
+        {title:"Fête de l’Agriculture et du Travail",category:"haiti",text:"Date importante du calendrier haïtien."}
+      ],
+      "2027-05-06":[
+        {title:"Ascension",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2027-05-08":[
+        {title:"Victoire du 8 mai 1945",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2027-05-16":[
+        {title:"Lundi de Pentecôte",category:"ferie",text:"Jour férié / repère de calendrier en France."}
+      ],
+      "2027-05-18":[
+        {title:"Fête du drapeau haïtien",category:"haiti",text:"Grand marqueur symbolique de l’unité nationale haïtienne."}
+      ],
+      "2027-05-22":[
+        {title:"Repère mémoriel du 22 mai",category:"haiti",text:"Date intégrée ici comme repère de mémoire et de célébration identitaire lié au bicolore et aux rassemblements diaspora."}
+      ],
+      "2027-07-14":[
+        {title:"Fête nationale française",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2027-08-01":[
+        {title:"Août — mois de mémoire nationale",category:"haiti",text:"Repère éditorial ajouté pour marquer le mois d’août dans la programmation diaspora. Vertières reste historiquement célébrée le 18 novembre."}
+      ],
+      "2027-08-15":[
+        {title:"Assomption",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2027-10-17":[
+        {title:"Mémoire de Dessalines",category:"haiti",text:"Date de mémoire liée à l’assassinat de Jean-Jacques Dessalines."}
+      ],
+      "2027-11-01":[
+        {title:"Toussaint",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2027-11-02":[
+        {title:"Jour des morts",category:"haiti",text:"Temps de recueillement et de mémoire."}
+      ],
+      "2027-11-11":[
+        {title:"Armistice 1918",category:"ferie",text:"Jour férié en France."}
+      ],
+      "2027-11-18":[
+        {title:"Bataille de Vertières",category:"haiti",text:"La bataille de Vertières du 18 novembre 1803 marque l’un des grands sommets de la lutte pour l’indépendance."}
+      ],
+      "2027-12-25":[
+        {title:"Noël",category:"ferie",text:"Jour férié en France."}
+      ]
     };
 
     const baseEvents = [
@@ -2373,12 +2549,12 @@ window.addEventListener("DOMContentLoaded", function () {
       {name:"BGE Île-de-France",mode:"Présentiel · IDF",type:"Gratuit",duration:"Programme",level:"Création / reprise",text:"Réseau de conseil pour créer, reprendre ou développer une entreprise.",link:"https://www.bge.asso.fr/"}
     ];
 
-    const monthKeys = [];
-    for(let y=2026; y<=2027; y++){
-      for(let m=1; m<=12; m++){
-        monthKeys.push(`${y}-${String(m).padStart(2,"0")}`);
-      }
-    }
+    const monthKeys = [...new Set(
+      [
+        ...baseEvents.map(e => e.date.slice(0,7)),
+        ...Object.keys(symbolicDays).map(d => d.slice(0,7))
+      ].sort()
+    )];
 
     const featuredByMonth = {
       "2026-01":["e1"],
@@ -2401,7 +2577,7 @@ window.addEventListener("DOMContentLoaded", function () {
     const parisNow = getParisNow();
 
     const state = {
-      currentMonth: parisNow.monthKey,
+      currentMonth: monthKeys.includes(parisNow.monthKey) ? parisNow.monthKey : monthKeys[0],
       filtered:[],
       selectedDay:null
     };
@@ -2412,7 +2588,8 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     function updatePromoCount(){
-      if(el.promoCount) el.promoCount.textContent = baseEvents.length;
+      const total = baseEvents.length + Object.values(symbolicDays).flat().length;
+      if(el.promoCount) el.promoCount.textContent = total;
     }
 
     function getTicketBadge(e){
@@ -2530,7 +2707,19 @@ window.addEventListener("DOMContentLoaded", function () {
       const {main,secondary} = getEditorialSelection();
 
       if(!main){
-        mainBox.innerHTML = "";
+        mainBox.innerHTML = `
+          <div class="editorial-main-media">
+            <img src="${fallbackPoster}" alt="Konbit Agency">
+          </div>
+          <div class="editorial-main-body">
+            <div class="editorial-kicker">Programmation à venir</div>
+            <h3>Bientôt de nouvelles opportunités</h3>
+            <p>La sélection Konbit est en cours de mise à jour pour ce mois.</p>
+            <div class="actions">
+              <a class="btn btn-gold" href="#soumettre">Publier un événement</a>
+            </div>
+          </div>
+        `;
         sideBox.innerHTML = "";
         return;
       }
@@ -2552,7 +2741,14 @@ window.addEventListener("DOMContentLoaded", function () {
           </div>
           <p>${main.description || main.excerpt || ""}</p>
           <div class="actions">
-            <button class="btn btn-gold" data-open-ed="${main.id}" type="button">${getTicketButtonLabel(main)}</button>
+            <a 
+              class="btn btn-gold"
+              href="${getTicketUrl(main)}"
+              ${shouldOpenInNewTab(main) ? 'target="_blank" rel="noopener"' : ""}
+              data-ticket="${main.id}"
+            >
+              ${getTicketButtonLabel(main)}
+            </a>
             <button class="btn btn-outline" data-open-detail="${main.id}" type="button">Détail</button>
           </div>
         </div>
@@ -2569,19 +2765,19 @@ window.addEventListener("DOMContentLoaded", function () {
             <h4>${e.title}</h4>
             <p>${e.excerpt||""}</p>
             <div class="actions">
-              <button class="btn btn-gold" data-open-ed="${e.id}" type="button">${getTicketButtonLabel(e)}</button>
+              <a 
+                class="btn btn-gold"
+                href="${getTicketUrl(e)}"
+                ${shouldOpenInNewTab(e) ? 'target="_blank" rel="noopener"' : ""}
+                data-ticket="${e.id}"
+              >
+                ${getTicketButtonLabel(e)}
+              </a>
               <button class="btn btn-outline" data-open-detail="${e.id}" type="button">Détail</button>
             </div>
           </div>
         </article>
       `).join("");
-
-      document.querySelectorAll("[data-open-ed]").forEach(btn=>{
-        btn.onclick=()=>{
-          const ev = baseEvents.find(e=>e.id===btn.dataset.openEd);
-          if(ev) openModal(ev);
-        };
-      });
 
       document.querySelectorAll("[data-open-detail]").forEach(btn=>{
         btn.onclick=()=>{
@@ -2589,6 +2785,8 @@ window.addEventListener("DOMContentLoaded", function () {
           if(ev) openModal(ev);
         };
       });
+
+      bindKonbitTicketButtons();
     }
 
     function renderTimeline(){
@@ -2596,7 +2794,7 @@ window.addEventListener("DOMContentLoaded", function () {
       if(!box) return;
       box.className = "timeline";
 
-      box.innerHTML = state.filtered.map(e=>{
+      box.innerHTML = state.filtered.length ? state.filtered.map(e=>{
         const past = isPastEvent(e.date);
         const d = new Date(e.date + "T12:00:00");
         return `
@@ -2637,7 +2835,29 @@ window.addEventListener("DOMContentLoaded", function () {
             </div>
           </article>
         `;
-      }).join("");
+      }).join("") : `
+        <article class="timeline-item">
+          <div>
+            <div class="timeline-date-num">—</div>
+            <div class="timeline-date-month">${monthNames[parseInt(state.currentMonth.split("-")[1],10)-1]}</div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-media">
+              <img src="${fallbackPoster}" alt="Konbit Agency">
+            </div>
+            <div class="timeline-body">
+              <div class="tags">
+                <span class="tag business">Programmation</span>
+              </div>
+              <h4>Aucun événement référencé sur ce mois</h4>
+              <p>Le calendrier mémoriel reste visible dans la vue mensuelle. Vous pouvez aussi publier un rendez-vous via Konbit Agency.</p>
+              <div class="actions">
+                <a class="btn btn-gold" href="#soumettre">Publier</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
 
       document.querySelectorAll("[data-open-tl]").forEach(btn=>{
         btn.onclick=()=>{
@@ -2686,7 +2906,7 @@ window.addEventListener("DOMContentLoaded", function () {
       }).join("");
 
       const n = state.filtered.length;
-      el.countText.textContent = n ? `${n} événement${n>1?"s":""} dans ce mois` : "Aucun événement pour ce mois.";
+      el.countText.textContent = n ? `${n} événement${n>1?"s":""} dans ce mois` : "Aucun événement référencé sur ce mois. Les repères calendaires restent visibles.";
 
       document.querySelectorAll("[data-open]").forEach(btn=>{
         btn.onclick=()=>{
@@ -2735,7 +2955,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         let dots = "";
         [...dayEvents,...syms].slice(0,3).forEach(item=>{
-          dots += `<span class="dot" style="background:${colors[item.category]||"#1738BE"}"></span>`;
+          dots += `<span class="dot" style="background:${colors[item.category]||"#16358A"}"></span>`;
         });
 
         let label = "";
@@ -2745,7 +2965,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         div.innerHTML = `${countBadge}<div class="dnum">${d.getDate()}</div><div class="dots">${dots}</div>${label}`;
 
-        if(dayEvents.length){
+        if(dayEvents.length || syms.length){
           div.dataset.dayiso = iso;
           div.style.cursor = "pointer";
         }
@@ -2798,8 +3018,13 @@ window.addEventListener("DOMContentLoaded", function () {
       layer.clearLayers();
       el.sideList.innerHTML = "";
 
+      if(!mapEvents.length){
+        el.sideList.innerHTML = `<div class="side-item"><strong>Aucune adresse pour ce mois</strong><span>Le mois sélectionné contient surtout des repères calendaires ou aucune fiche événement.</span></div>`;
+        return;
+      }
+
       mapEvents.forEach(e=>{
-        const color = colors[e.category] || "#1738BE";
+        const color = colors[e.category] || "#16358A";
         const marker = L.circleMarker([e.lat,e.lng],{
           radius:8,color,weight:2,fillColor:color,fillOpacity:.85
         }).addTo(layer);
@@ -2836,6 +3061,35 @@ window.addEventListener("DOMContentLoaded", function () {
       const track = document.getElementById("carouselTrack");
       const dots = document.getElementById("carouselDots");
       if(!track || !dots) return;
+
+      if(!carouselEvents.length){
+        const ht = document.getElementById("heroTitle");
+        const htx = document.getElementById("heroText");
+        const hc = document.getElementById("carouselCity");
+        const hp = document.getElementById("heroPrice");
+        const hd = document.getElementById("heroDate");
+        const hl = document.getElementById("heroLink");
+
+        track.innerHTML = `
+          <div class="carousel-slide">
+            <img src="${fallbackPoster}" alt="Konbit Agency">
+          </div>
+        `;
+        dots.innerHTML = "";
+        if(hd) hd.textContent = "Programmation à venir";
+        if(ht) ht.textContent = "Bientôt de nouvelles opportunités";
+        if(htx) htx.textContent = "La sélection Konbit est en cours de mise à jour pour ce mois.";
+        if(hc) hc.textContent = "Europe";
+        if(hp) hp.textContent = "";
+        if(hl){
+          hl.href = "#soumettre";
+          hl.textContent = "Publier un événement";
+          hl.removeAttribute("target");
+          hl.removeAttribute("rel");
+          hl.onclick = null;
+        }
+        return;
+      }
 
       track.innerHTML = carouselEvents.map((e,i)=>`
         <div class="carousel-slide" data-idx="${i}">
@@ -2961,6 +3215,28 @@ window.addEventListener("DOMContentLoaded", function () {
       ].join("\r\n");
     }
 
+    function openSymbolicModal(dateIso, items){
+      const modal = document.getElementById("symbolicModal");
+      const title = document.getElementById("symbolicTitle");
+      const text = document.getElementById("symbolicText");
+      const tags = document.getElementById("symbolicTags");
+      const meta = document.getElementById("symbolicMetaLine");
+
+      if(!modal || !title || !text || !tags || !meta) return;
+
+      meta.innerHTML = `<span style="font-size:13px;font-weight:700;color:var(--royal)">📅 ${fmt(dateIso)}</span>`;
+      title.textContent = items.length > 1 ? "Repères du jour" : items[0].title;
+      tags.innerHTML = items.map(item => `<span class="tag ${item.category}">${prettyCategory(item.category)}</span>`).join("");
+      text.innerHTML = items.map(item => `
+        <p style="margin:0 0 14px">
+          <strong style="display:block;color:var(--navy);margin-bottom:4px">${item.title}</strong>
+          <span>${item.text || ""}</span>
+        </p>
+      `).join("");
+
+      modal.classList.add("open");
+    }
+
     function openModal(e){
       const g = id=>document.getElementById(id);
       const mp = g("modalPoster");
@@ -3054,6 +3330,10 @@ window.addEventListener("DOMContentLoaded", function () {
       document.getElementById("modal").classList.remove("open");
     }
 
+    function closeSymbolicModal(){
+      document.getElementById("symbolicModal").classList.remove("open");
+    }
+
     function apply(){
       filterEvents();
       renderMonthNav();
@@ -3092,9 +3372,17 @@ window.addEventListener("DOMContentLoaded", function () {
     const cm = document.getElementById("closeModal");
     if(cm) cm.onclick = closeModal;
 
+    const scm = document.getElementById("closeSymbolicModal");
+    if(scm) scm.onclick = closeSymbolicModal;
+
     const modal = document.getElementById("modal");
     if(modal) modal.onclick=(e)=>{
       if(e.target.id==="modal") closeModal();
+    };
+
+    const symbolicModal = document.getElementById("symbolicModal");
+    if(symbolicModal) symbolicModal.onclick=(e)=>{
+      if(e.target.id==="symbolicModal") closeSymbolicModal();
     };
 
     const sf = document.getElementById("submitForm");
@@ -3152,7 +3440,10 @@ window.addEventListener("DOMContentLoaded", function () {
         renderCalendar();
         renderEditorial();
         renderTimeline();
+
         const evts = state.filtered.filter(e=>e.date===iso);
+        const syms = symbolicDays[iso] || [];
+
         if(evts.length===1){
           openModal(evts[0]);
         }else if(evts.length>1){
@@ -3162,6 +3453,8 @@ window.addEventListener("DOMContentLoaded", function () {
             fc.closest(".card").style.outline="2px solid var(--royal)";
             setTimeout(()=>{fc.closest(".card").style.outline="";},1800);
           }
+        }else if(syms.length){
+          openSymbolicModal(iso, syms);
         }
       });
     }
@@ -3170,4 +3463,4 @@ window.addEventListener("DOMContentLoaded", function () {
 </script>
 
 </body>
-                                                                                                                           </html>
+</html>

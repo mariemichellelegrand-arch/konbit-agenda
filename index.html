@@ -3,8 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maison Konbit | Agenda signature, billetterie & scène haïtienne en France</title>
-<meta name="description" content="Maison Konbit signe une lecture éditoriale de la scène haïtienne en France : agenda signature, billetterie, culture, rencontres, entrepreneuriat et visibilité choisie.">
+
+<title>Konbit Agency | Entrepreneuriat diaspora haïtienne Europe · Éducation financière · Agenda & Billetterie</title>
+<meta name="description" content="Konbit Agency est une plateforme européenne dédiée à l’entrepreneuriat, à l’éducation financière et à la visibilité des initiatives de la diaspora haïtienne et afro-caribéenne. Agenda, formations, business, billetterie et opportunités.">
+<meta name="keywords" content="entrepreneuriat diaspora, diaspora haïtienne Europe, éducation financière, business diaspora, agenda entrepreneurs, billetterie diaspora, networking diaspora, plateforme entrepreneuriale, événements haïtiens Europe, formation business diaspora">
+
+<meta property="og:title" content="Konbit Agency | Entrepreneuriat, éducation financière, agenda & billetterie">
+<meta property="og:description" content="La plateforme européenne dédiée à l’entrepreneuriat, à l’éducation financière et à la visibilité business de la diaspora haïtienne et afro-caribéenne.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Konbit Agency | Entrepreneuriat, éducation financière, agenda & billetterie">
+<meta name="twitter:description" content="Plateforme européenne dédiée à la diaspora haïtienne et afro-caribéenne : business, formation, agenda, billetterie et opportunités.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -51,7 +63,6 @@ img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 button,input,select,textarea{font:inherit}
 .wrap{width:var(--container);margin:auto}
-.serif{font-family:'Cormorant Garamond',serif}
 
 .btn{
   display:inline-flex;
@@ -167,7 +178,7 @@ button,input,select,textarea{font:inherit}
   border-bottom:1px solid rgba(17,28,68,.08);
   box-shadow:0 8px 24px rgba(10,16,35,.04);
 }
-.maison-header{
+.header-in{
   min-height:84px;
   display:flex;
   align-items:center;
@@ -293,15 +304,11 @@ button,input,select,textarea{font:inherit}
 .hero h1{
   margin:18px 0 14px;
   font-family:'Cormorant Garamond',serif;
-  font-size:68px;
-  line-height:.98;
+  font-size:64px;
+  line-height:1;
   letter-spacing:-.025em;
   color:#fff;
   max-width:760px;
-}
-.hero h1 em{
-  font-style:normal;
-  color:var(--gold-light);
 }
 .hero p{
   margin:0 0 24px;
@@ -488,6 +495,20 @@ button,input,select,textarea{font:inherit}
 .carousel-actions{display:flex;gap:8px;flex-wrap:wrap}
 .carousel-actions .btn{min-height:38px;padding:0 14px;font-size:10px}
 
+.editorial-block h2{
+  margin:0;
+  font-family:'Cormorant Garamond',serif;
+  font-size:46px;
+  line-height:1.05;
+  color:var(--navy);
+}
+.editorial-block p{
+  margin:16px 0 0;
+  font-size:15px;
+  line-height:1.9;
+  color:var(--muted);
+}
+
 .promo-bar{
   display:flex;
   align-items:center;
@@ -556,13 +577,13 @@ button,input,select,textarea{font:inherit}
 .ticketing-shell h3{
   margin:0 0 12px;
   font-family:'Cormorant Garamond',serif;
-  font-size:46px;
-  line-height:.98;
+  font-size:44px;
+  line-height:1;
   color:var(--navy);
   max-width:720px;
 }
 .ticketing-shell p{
-  margin:0;
+  margin:0 0 14px;
   max-width:760px;
   font-size:15px;
   line-height:1.9;
@@ -649,108 +670,6 @@ button,input,select,textarea{font:inherit}
   font-size:16px;
   line-height:1.8;
   color:var(--muted);
-}
-.discover-search{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  min-height:74px;
-  padding:0 20px;
-  background:#fff;
-  border:1px solid rgba(17,28,68,.10);
-  border-radius:22px;
-  box-shadow:0 10px 28px rgba(19,33,63,.05);
-  margin-bottom:18px;
-}
-.search-icon{
-  font-size:22px;
-  color:var(--navy);
-  opacity:.7;
-}
-.discover-search input{
-  border:none;
-  outline:none;
-  width:100%;
-  background:transparent;
-  font-size:20px;
-  color:var(--text);
-}
-.discover-search input::placeholder{color:#8b93a7}
-.discover-topics{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-.topic-chip{
-  min-height:46px;
-  padding:0 18px;
-  border-radius:999px;
-  border:1px solid rgba(17,28,68,.10);
-  background:#fff;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.10em;
-  text-transform:uppercase;
-  color:var(--navy);
-  cursor:pointer;
-  transition:.2s;
-}
-.topic-chip:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 22px rgba(19,33,63,.08);
-}
-.topic-chip.active{
-  background:var(--navy);
-  color:#fff;
-  border-color:var(--navy);
-}
-.discover-divider{
-  height:1px;
-  background:linear-gradient(90deg,transparent,rgba(19,33,63,.12),transparent);
-  margin:22px 0;
-}
-.discover-advanced{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:14px;
-  align-items:end;
-}
-.discover-reset{
-  display:flex;
-  align-items:flex-end;
-}
-.field{display:flex;flex-direction:column;gap:6px}
-.field label{
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-.field input,.field select{
-  width:100%;
-  height:52px;
-  border-radius:16px;
-  border:1px solid rgba(17,28,68,.10);
-  background:#fff;
-  padding:0 14px;
-  color:var(--text);
-  outline:none;
-}
-.field textarea{
-  width:100%;
-  border-radius:16px;
-  border:1px solid rgba(17,28,68,.10);
-  background:#fff;
-  padding:12px 14px;
-  color:var(--text);
-  outline:none;
-  min-height:140px;
-  resize:vertical;
-}
-.field input:focus,.field select:focus,.field textarea:focus{
-  border-color:var(--royal);
-  box-shadow:0 0 0 3px rgba(23,56,190,.10);
 }
 
 .month-nav-wrap{
@@ -1572,6 +1491,39 @@ button,input,select,textarea{font:inherit}
   gap:12px;
 }
 .full{grid-column:1/-1}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.field input,.field select{
+  width:100%;
+  height:52px;
+  border-radius:16px;
+  border:1px solid rgba(17,28,68,.10);
+  background:#fff;
+  padding:0 14px;
+  color:var(--text);
+  outline:none;
+}
+.field textarea{
+  width:100%;
+  border-radius:16px;
+  border:1px solid rgba(17,28,68,.10);
+  background:#fff;
+  padding:12px 14px;
+  color:var(--text);
+  outline:none;
+  min-height:140px;
+  resize:vertical;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--royal);
+  box-shadow:0 0 0 3px rgba(23,56,190,.10);
+}
 .success{
   display:none;
   margin-top:12px;
@@ -1735,38 +1687,16 @@ button,input,select,textarea{font:inherit}
   color:var(--text);
 }
 
-.panel,.card,.ticketing-card,.sponsor-card,.train,.side-item,.month-luxury-item{
-  transition:transform .24s ease, box-shadow .24s ease, border-color .24s ease, background .24s ease;
-}
-.card:hover,.ticketing-card:hover,.train:hover,.side-item:hover,.month-luxury-item:hover{
-  transform:translateY(-3px);
-}
-.card,.editorial-main,.editorial-mini,.side,.map-box,.form,.submit-info,.ticketing-shell,.discover-shell,.month-nav-wrap{
-  box-shadow:0 18px 44px rgba(10,16,35,.07);
-}
-.card:hover,.editorial-main:hover,.editorial-mini:hover,.sponsor-card:hover{
-  box-shadow:0 26px 58px rgba(10,16,35,.11);
-}
-.tag,.hero-meta span,.editorial-meta span{
-  transition:transform .18s ease, background .18s ease;
-}
-.tag:hover,.hero-meta span:hover,.editorial-meta span:hover{
-  transform:translateY(-1px);
-}
-
 @media (max-width:1100px){
   .hero-grid,
   .ticketing-grid,
   .editorial-layout,
   .map-layout,
   .submit{grid-template-columns:1fr}
-  .discover-advanced{grid-template-columns:1fr 1fr}
-  .discover-reset{grid-column:1/-1}
   .grid{grid-template-columns:repeat(2,1fr)}
   .train-grid{grid-template-columns:repeat(2,1fr)}
   .sponsors{grid-template-columns:1fr}
 }
-
 @media (max-width:820px){
   .topbar-marquee{height:38px}
   .topbar-track span{
@@ -1774,9 +1704,8 @@ button,input,select,textarea{font:inherit}
     font-size:9px;
     letter-spacing:.12em;
   }
-
   .nav{display:none}
-  .maison-header{
+  .header-in{
     min-height:auto;
     padding:12px 0;
     flex-direction:column;
@@ -1800,7 +1729,6 @@ button,input,select,textarea{font:inherit}
     border-radius:18px;
     justify-content:center;
   }
-
   .hero-card{padding:22px}
   .hero h1{font-size:34px;line-height:1.05}
   .hero p{font-size:14px}
@@ -1812,12 +1740,7 @@ button,input,select,textarea{font:inherit}
   .ticketing-shell{padding:20px;border-radius:24px}
   .ticketing-shell h3{font-size:32px}
   .discover-shell{padding:20px;border-radius:24px}
-  .discover-head h3{font-size:34px;line-height:1.08}
-  .discover-head p{font-size:14px;line-height:1.7}
-  .discover-search{min-height:58px;padding:0 14px;border-radius:16px}
-  .discover-search input{font-size:15px}
-  .topic-chip{min-height:42px;padding:0 14px;font-size:10px}
-  .discover-advanced{grid-template-columns:1fr}
+  .discover-head h3,.editorial-block h2{font-size:34px;line-height:1.08}
   .month-nav-current{font-size:28px}
   .cal-title{font-size:24px}
   .calendar{gap:5px}
@@ -1834,25 +1757,24 @@ button,input,select,textarea{font:inherit}
   .modal-b h5{font-size:32px}
   .partners-head h3{font-size:34px}
 }
-
 </style>
 </head>
 <body>
 
 <div class="topbar topbar-marquee">
   <div class="topbar-track">
-    <span>🇭🇹 Maison Konbit <i>•</i> Agenda signature <i>•</i> Billetterie <i>•</i> Scène haïtienne en France</span>
-    <span>🇭🇹 Maison Konbit <i>•</i> Agenda signature <i>•</i> Billetterie <i>•</i> Scène haïtienne en France</span>
-    <span>🇭🇹 Maison Konbit <i>•</i> Agenda signature <i>•</i> Billetterie <i>•</i> Scène haïtienne en France</span>
+    <span>🇭🇹 Entrepreneuriat <i>•</i> Éducation financière <i>•</i> Business diaspora <i>•</i> Agenda <i>•</i> Billetterie</span>
+    <span>🇭🇹 Entrepreneuriat <i>•</i> Éducation financière <i>•</i> Business diaspora <i>•</i> Agenda <i>•</i> Billetterie</span>
+    <span>🇭🇹 Entrepreneuriat <i>•</i> Éducation financière <i>•</i> Business diaspora <i>•</i> Agenda <i>•</i> Billetterie</span>
   </div>
 </div>
 
 <header class="header">
-  <div class="wrap maison-header">
+  <div class="wrap header-in">
     <div class="brand-block">
       <img src="https://cdn.shopify.com/s/files/1/0079/5557/8943/files/Logo_KONBIT_AGENCY.png?v=1773622950" alt="Konbit Agency" class="brand-logo">
       <div class="brand-text">
-        <span class="brand-kicker">Maison éditoriale</span>
+        <span class="brand-kicker">Plateforme européenne</span>
         <strong>Konbit Agency</strong>
       </div>
     </div>
@@ -1861,11 +1783,11 @@ button,input,select,textarea{font:inherit}
       <a href="#agenda">Agenda</a>
       <a href="#billetterie-konbit">Billetterie</a>
       <a href="#carte">Adresses</a>
-      <a href="#formations">Entreprendre</a>
+      <a href="#formations">Formations</a>
       <a href="#soumettre">Publier</a>
     </nav>
 
-    <a href="#soumettre" class="btn btn-gold header-cta">Publier sur Konbit</a>
+    <a href="#soumettre" class="btn btn-gold header-cta">Publier un événement</a>
   </div>
 </header>
 
@@ -1874,23 +1796,21 @@ button,input,select,textarea{font:inherit}
     <div class="hero-card">
       <div class="hero-grid">
         <div>
-          <div class="hero-kicker">Maison éditoriale · Agenda signature · Billetterie</div>
-          <h1>Maison Konbit signe les rendez-vous haïtiens qui comptent en France</h1>
+          <div class="hero-kicker">Plateforme européenne · Entrepreneuriat · Éducation financière</div>
+          <h1>Entreprendre, se structurer et investir : la plateforme de référence pour la diaspora haïtienne en Europe</h1>
           <p>
-            Une lecture éditoriale des rendez-vous haïtiens en France : soirées choisies,
-            moments de culture, initiatives remarquables, adresses sélectionnées et billetterie
-            portée avec plus d’élégance, plus de clarté et plus de stature.
+            Konbit Agency est une plateforme européenne dédiée à l’entrepreneuriat, à l’éducation financière et à la visibilité des initiatives issues de la diaspora haïtienne et afro-caribéenne. Accédez à un agenda stratégique, des formations, des opportunités business, des événements ciblés et une billetterie centralisée.
           </p>
 
           <div class="hero-actions">
-            <a href="#agenda" class="btn btn-gold">Découvrir la sélection</a>
+            <a href="#agenda" class="btn btn-gold">Découvrir les opportunités</a>
             <a href="#billetterie-konbit" class="btn btn-dark">Explorer la billetterie</a>
           </div>
 
           <div class="hero-meta">
-            <span>Agenda communautaire</span>
-            <span>Billetterie Konbit en développement</span>
-            <span>Visibilité choisie pour les organisateurs</span>
+            <span>Agenda stratégique</span>
+            <span>Éducation financière</span>
+            <span>Visibilité business</span>
           </div>
         </div>
 
@@ -1920,44 +1840,58 @@ button,input,select,textarea{font:inherit}
         </div>
       </div>
     </div>
-</div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="panel panel-pad editorial-block">
+      <h2>Une plateforme pensée pour structurer l’écosystème entrepreneurial de la diaspora</h2>
+      <p>
+        Konbit Agency centralise les événements, les formations, les initiatives et les opportunités d’affaires pour les entrepreneurs, porteurs de projets, professionnels et investisseurs issus de la diaspora haïtienne et afro-caribéenne en Europe.
+      </p>
+      <p>
+        Notre mission est claire : faciliter l’accès à l’information, renforcer l’éducation financière, accélérer les collaborations, soutenir la montée en compétence et offrir une visibilité stratégique aux acteurs économiques de la communauté.
+      </p>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="agenda">
   <div class="wrap">
     <div class="promo-bar">
-      <span class="promo-item">🗓 <strong id="promoCount">14</strong> rendez-vous référencés</span>
+      <span class="promo-item">📈 <strong id="promoCount">14</strong> opportunités et événements référencés</span>
       <span class="promo-sep">·</span>
-      <span class="promo-item">📍 France entière</span>
+      <span class="promo-item">🌍 Diaspora haïtienne & afro-caribéenne en Europe</span>
       <span class="promo-sep">·</span>
       <span class="promo-item"><a href="#soumettre" style="color:var(--royal);font-weight:800">Publier sur Konbit</a></span>
       <span class="promo-sep">·</span>
-      <span class="promo-item"><a href="#partenaires" style="color:var(--royal);font-weight:800">Présence partenaire</a></span>
+      <span class="promo-item"><a href="#partenaires" style="color:var(--royal);font-weight:800">Devenir partenaire</a></span>
     </div>
 
     <section class="ticketing-shell" id="billetterie-konbit">
       <div class="ticketing-grid">
         <div>
-          <div class="ticketing-kicker">Billetterie Konbit — ouverture progressive</div>
-          <h3>Une billetterie plus juste, plus lisible, plus statutaire</h3>
+          <div class="ticketing-kicker">Billetterie Konbit — diffusion ciblée</div>
+          <h3>Billetterie et visibilité pour les événements à fort impact</h3>
           <p>
-            Maison Konbit développe une lecture plus claire de la billetterie pour les organisateurs
-            et le public de la scène haïtienne en France. Plus élégante, plus directe et mieux éditorialisée,
-            elle accompagne les rendez-vous qui méritent une diffusion maîtrisée.
+            Konbit Agency permet aux organisateurs de conférences, rencontres professionnelles, événements business, formations et rendez-vous communautaires de diffuser leurs événements et de vendre leurs billets auprès d’une audience qualifiée.
+          </p>
+          <p>
+            La plateforme combine billetterie, mise en avant éditoriale et visibilité ciblée auprès des entrepreneurs, investisseurs, associations, experts et porteurs de projets de la diaspora.
           </p>
         </div>
         <div class="ticketing-cards">
           <div class="ticketing-card">
-            <strong>Événement pilote</strong>
-            <span>Femme en Lumière inaugure la logique de billetterie Konbit sur la plateforme.</span>
+            <strong>Audience qualifiée</strong>
+            <span>Des événements présentés à une communauté engagée dans le business, la formation, l’investissement et le développement économique.</span>
           </div>
           <div class="ticketing-card">
-            <strong>Lecture claire</strong>
-            <span>Chaque événement affiche un statut distinct : Konbit, partenaire ou accès libre.</span>
+            <strong>Visibilité ciblée</strong>
+            <span>Une mise en avant pensée pour renforcer la portée commerciale et la crédibilité des événements publiés sur la plateforme.</span>
           </div>
           <div class="ticketing-card">
-            <strong>Étude organisateurs</strong>
-            <span>Publication simple, visibilité éditoriale et accompagnement billetterie sur demande.</span>
+            <strong>Monétisation structurée</strong>
+            <span>Une logique de diffusion et de billetterie au service des organisateurs qui veulent professionnaliser leur présence et leur conversion.</span>
           </div>
         </div>
       </div>
@@ -1965,69 +1899,11 @@ button,input,select,textarea{font:inherit}
 
     <div class="discover-shell panel">
       <div class="discover-head">
-        <div class="discover-kicker">Entrée éditoriale</div>
-        <h3>Explorer les rendez-vous qui font vibrer la communauté</h3>
+        <div class="discover-kicker">Agenda stratégique</div>
+        <h3>Explorer les événements, formations et initiatives qui font avancer la communauté</h3>
         <p>
-          Soirées, culture, rencontres, initiatives, business, événements engagés et temps forts haïtiens :
-          parcourez la programmation comme une véritable sélection.
+          Networking, entrepreneuriat, éducation financière, conférences, culture business, opportunités, rencontres professionnelles et temps forts de la diaspora : parcourez la programmation comme un véritable levier de croissance et de connexion.
         </p>
-      </div>
-
-      <div class="discover-search">
-        <div class="search-icon">⌕</div>
-        <input id="search" type="text" placeholder="Konpa, gala, conférence, Paris…">
-      </div>
-
-      <div class="discover-topics">
-        <button class="topic-chip active" data-quick="all">Toute la programmation</button>
-        <button class="topic-chip" data-quick="weekend">Sélection week-end</button>
-        <button class="topic-chip" data-quick="free">Accès libre</button>
-        <button class="topic-chip" data-quick="entrepreneur">Business & projets</button>
-        <button class="topic-chip" data-quick="haiti">Temps forts haïtiens</button>
-      </div>
-
-      <div class="discover-divider"></div>
-
-      <div class="discover-advanced">
-        <div class="field">
-          <label>Univers</label>
-          <select id="category">
-            <option value="all">Tous les univers</option>
-            <option value="culture">Culture</option>
-            <option value="musique">Musique</option>
-            <option value="gastronomie">Gastronomie</option>
-            <option value="business">Business</option>
-            <option value="association">Association</option>
-            <option value="formation">Formation</option>
-            <option value="conference">Conférence</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>Localisation</label>
-          <select id="city">
-            <option value="all">Toute la France</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>Billetterie</label>
-          <select id="ticketFilter">
-            <option value="all">Tous</option>
-            <option value="konbit">Billetterie Konbit</option>
-            <option value="external">Billetterie partenaire</option>
-            <option value="info">Accès libre / information</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>Mois</label>
-          <select id="monthJump"></select>
-        </div>
-
-        <div class="discover-reset">
-          <button class="btn btn-outline" id="reset">Réinitialiser</button>
-        </div>
       </div>
     </div>
   </div>
@@ -2044,7 +1920,6 @@ button,input,select,textarea{font:inherit}
         </div>
         <button class="month-nav-arrow" id="nextMonth">&#8594;</button>
       </div>
-
       <div class="month-pills-track" id="monthPillsTrack"></div>
     </div>
 
@@ -2128,9 +2003,9 @@ button,input,select,textarea{font:inherit}
 <section class="section training-shell" id="formations">
   <div class="wrap" style="padding:20px 0">
     <div class="training-head" style="margin-bottom:16px">
-      <h3>Entreprendre, apprendre, se structurer</h3>
+      <h3>Se former, structurer son activité, développer sa vision</h3>
       <div class="sub">
-        Une sélection utile pour celles et ceux qui créent, développent ou structurent une activité.
+        Une sélection utile pour les entrepreneurs, indépendants, dirigeants, porteurs de projets et professionnels qui veulent renforcer leurs compétences et leur stratégie.
       </div>
     </div>
 
@@ -2141,38 +2016,36 @@ button,input,select,textarea{font:inherit}
 <section class="partners" id="partenaires">
   <div class="wrap">
     <div class="partners-head">
-      <div class="small">Maison Konbit · Partenaires</div>
-      <h3>Associer son nom à une scène, une communauté, une signature</h3>
+      <div class="small">Partenariats · Visibilité · Business</div>
+      <h3>Accédez à une audience qualifiée et engagée</h3>
       <p>
-        Maison Konbit ouvre des espaces de présence choisis pour les marques, structures,
-        institutions et partenaires souhaitant s’inscrire avec justesse dans l’écosystème
-        haïtien en France.
+        Konbit Agency propose aux marques, institutions, entreprises, associations et structures expertes une visibilité stratégique auprès d’une audience engagée dans l’entrepreneuriat, l’investissement, l’éducation financière et le développement économique de la diaspora en Europe.
       </p>
     </div>
 
     <div class="sponsors">
       <div class="sponsor-card">
-        <div class="sponsor-tier" style="background:var(--gold);color:var(--navy)">✦ Présence signature</div>
+        <div class="sponsor-tier" style="background:var(--gold);color:var(--navy)">✦ Présence stratégique</div>
         <div class="sponsor-price">À partir de 300 €<span>/mois</span></div>
-        <h4>Rayonnement de marque</h4>
+        <h4>Visibilité business</h4>
         <ul class="sponsor-list">
-          <li>Présence sur la plateforme et dans les espaces éditoriaux</li>
-          <li>Mise en avant dans les sélections Konbit</li>
-          <li>Relais sur les prises de parole communautaires</li>
-          <li>Association à une audience ciblée et qualitative</li>
+          <li>Présence sur la plateforme et dans les espaces à forte exposition</li>
+          <li>Association à un univers entrepreneurial et financier ciblé</li>
+          <li>Visibilité auprès d’une audience qualifiée et engagée</li>
+          <li>Renforcement de l’image de marque auprès de la diaspora</li>
         </ul>
         <a href="#soumettre" class="btn btn-gold">Demander une étude</a>
       </div>
 
       <div class="sponsor-card" style="border:2px solid rgba(201,163,74,.45)">
-        <div class="sponsor-tier" style="background:rgba(201,163,74,.14);color:var(--gold-light)">✦ Mise en lumière éditoriale</div>
+        <div class="sponsor-tier" style="background:rgba(201,163,74,.14);color:var(--gold-light)">✦ Mise en avant premium</div>
         <div class="sponsor-price">150 €<span>/événement</span></div>
-        <h4>Rendez-vous signature</h4>
+        <h4>Événement signature</h4>
         <ul class="sponsor-list">
-          <li>Position éditoriale dans la sélection du mois</li>
-          <li>Présence hero et visibilité renforcée</li>
+          <li>Position éditoriale renforcée dans la sélection Konbit</li>
+          <li>Visibilité accrue dans les espaces de conversion</li>
           <li>Signalétique dédiée sur la plateforme</li>
-          <li>Relais prioritaire sur les supports Konbit</li>
+          <li>Relais prioritaire dans les temps forts de la programmation</li>
         </ul>
         <a href="#soumettre" class="btn btn-gold">Mettre en lumière</a>
       </div>
@@ -2180,14 +2053,14 @@ button,input,select,textarea{font:inherit}
       <div class="sponsor-card">
         <div class="sponsor-tier" style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.86)">✦ Référencement</div>
         <div class="sponsor-price">Gratuit<span> · publication</span></div>
-        <h4>Référencer un rendez-vous</h4>
+        <h4>Publier sur la plateforme</h4>
         <ul class="sponsor-list">
-          <li>Fiche événement complète</li>
-          <li>Présence sur la carte et l’agenda</li>
-          <li>Étude possible de billetterie Konbit</li>
-          <li>Validation éditoriale sous 48h</li>
+          <li>Fiche événement ou initiative complète</li>
+          <li>Présence dans l’agenda et sur les espaces de navigation</li>
+          <li>Étude possible de billetterie et de visibilité</li>
+          <li>Validation éditoriale selon cohérence et qualité</li>
         </ul>
-        <a href="#soumettre" class="btn btn-gold">Publier sur Konbit</a>
+        <a href="#soumettre" class="btn btn-gold">Publier</a>
       </div>
     </div>
   </div>
@@ -2197,15 +2070,13 @@ button,input,select,textarea{font:inherit}
   <div class="wrap">
     <div class="submit">
       <div class="submit-info">
-        <div class="pill">Référencement & étude billetterie</div>
-        <h3>Référencer un rendez-vous sur Konbit</h3>
+        <div class="pill">Publication · Billetterie · Visibilité</div>
+        <h3>Publier un événement ou une initiative sur Konbit Agency</h3>
         <p>
-          Konbit Agency sélectionne, structure et met en visibilité les événements qui participent au rayonnement
-          de la scène haïtienne en France.
+          Konbit Agency sélectionne, structure et met en visibilité les événements, formations, initiatives et opportunités qui contribuent à l’essor entrepreneurial, financier et économique de la diaspora.
         </p>
         <p>
-          Publication, accompagnement éditorial et étude de billetterie peuvent être envisagés selon la nature
-          de votre événement, son audience et sa portée.
+          Publication, accompagnement éditorial, étude de billetterie et mise en lumière commerciale peuvent être envisagés selon la nature du projet, son audience et son potentiel.
         </p>
       </div>
 
@@ -2298,11 +2169,9 @@ button,input,select,textarea{font:inherit}
     <div class="foot-grid">
       <div>
         <div class="foot-divider"></div>
-        <div class="brandname">Maison Konbit</div>
+        <div class="brandname">Konbit Agency</div>
         <p>
-          Maison Konbit compose une lecture éditoriale et communautaire des rendez-vous haïtiens
-          en France : culture, rencontres, entrepreneuriat, billetterie et mise en lumière
-          des initiatives qui portent la scène.
+          Konbit Agency est une plateforme européenne dédiée à l’entrepreneuriat, à l’éducation financière et à la mise en réseau des acteurs économiques de la diaspora haïtienne et afro-caribéenne.
         </p>
       </div>
 
@@ -2311,20 +2180,22 @@ button,input,select,textarea{font:inherit}
         <p><a href="#agenda">Agenda</a></p>
         <p><a href="#billetterie-konbit">Billetterie</a></p>
         <p><a href="#carte">Adresses</a></p>
-        <p><a href="#formations">Entreprendre</a></p>
+        <p><a href="#formations">Formations</a></p>
         <p><a href="#soumettre">Publier</a></p>
       </div>
 
       <div>
-        <h4>Liens</h4>
-        <p><a href="https://kisqueya.fr/blogs/blog-kisqueya-histoires-impact/calendrier-de-la-communaute">Calendrier communautaire</a></p>
-        <p><a href="https://kisqueya.fr">Site principal</a></p>
+        <h4>Positionnement</h4>
+        <p>Entrepreneuriat</p>
+        <p>Éducation financière</p>
+        <p>Business diaspora</p>
+        <p>Agenda · Billetterie · Europe</p>
       </div>
     </div>
 
     <div class="foot-bottom">
-      <p>© Maison Konbit — Signature éditoriale haïtienne en France</p>
-      <p>Agenda · Billetterie · Partenaires · 2026</p>
+      <p>© Konbit Agency — Plateforme européenne business & diaspora</p>
+      <p>Entrepreneuriat · Finance · Visibilité · Europe</p>
     </div>
   </div>
 </footer>
@@ -2450,12 +2321,15 @@ window.addEventListener("DOMContentLoaded", function () {
       }
     }
 
+    const featuredByMonth = {
+      "2026-01":["e1"],
+      "2026-02":["e2","e3"],
+      "2026-03":["e11","e5","e12","e14"],
+      "2026-04":["e7","e8"],
+      "2026-05":["e9","e10"]
+    };
+
     const el = {
-      search:document.getElementById("search"),
-      category:document.getElementById("category"),
-      city:document.getElementById("city"),
-      ticketFilter:document.getElementById("ticketFilter"),
-      monthJump:document.getElementById("monthJump"),
       calendar:document.getElementById("calendar"),
       calTitle:document.getElementById("calTitle"),
       grid:document.getElementById("grid"),
@@ -2466,11 +2340,6 @@ window.addEventListener("DOMContentLoaded", function () {
     };
 
     const state = {
-      search:"",
-      category:"all",
-      city:"all",
-      ticketFilter:"all",
-      quick:"all",
       currentMonth:"2026-03",
       filtered:[],
       selectedDay:null
@@ -2481,35 +2350,7 @@ window.addEventListener("DOMContentLoaded", function () {
       state.selectedDay = t.startsWith(state.currentMonth) ? t : null;
     }
 
-    function quickMatch(e){
-      if(state.quick==="all") return true;
-      if(state.quick==="weekend") return weekend(e.date);
-      if(state.quick==="free") return /gratuit/i.test(e.price||"");
-      if(state.quick==="entrepreneur") return ["business","formation","conference"].includes(e.category);
-      if(state.quick==="haiti") return !!symbolicDays[e.date];
-      return true;
-    }
-
-    function populateCities(){
-      const cities = [...new Set(baseEvents.map(e=>e.city))].sort((a,b)=>a.localeCompare(b,"fr"));
-      el.city.innerHTML = '<option value="all">Toute la France</option>';
-      cities.forEach(city=>{
-        const o = document.createElement("option");
-        o.value = city;
-        o.textContent = city;
-        el.city.appendChild(o);
-      });
-    }
-
-    function populateMonthJump(){
-      el.monthJump.innerHTML = monthKeys.map(key=>{
-        const [y,m] = key.split("-");
-        return `<option value="${key}">${monthNames[parseInt(m,10)-1]} ${y}</option>`;
-      }).join("");
-      el.monthJump.value = state.currentMonth;
-    }
-
-    function updatePromoCount(){
+       function updatePromoCount(){
       if(el.promoCount) el.promoCount.textContent = baseEvents.length;
     }
 
@@ -2539,6 +2380,11 @@ window.addEventListener("DOMContentLoaded", function () {
       return "Accès libre / informations";
     }
 
+    function filterEvents(){
+      state.filtered = baseEvents.filter(e=>e.date.startsWith(state.currentMonth));
+      state.filtered = sortEventsChronologically(state.filtered);
+    }
+
     function renderMonthNav(){
       const box = document.getElementById("monthPillsTrack");
       const current = document.getElementById("monthNavCurrent");
@@ -2546,7 +2392,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
       const [y,m] = state.currentMonth.split("-");
       if(current) current.textContent = `${monthNames[parseInt(m,10)-1]} ${y}`;
-      if(el.monthJump) el.monthJump.value = state.currentMonth;
 
       box.innerHTML = monthKeys.map(key=>{
         const [yy,mm] = key.split("-");
@@ -2567,26 +2412,6 @@ window.addEventListener("DOMContentLoaded", function () {
           btn.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});
         };
       });
-    }
-
-    function filterEvents(){
-      state.search = (el.search.value||"").trim().toLowerCase();
-      state.category = el.category.value;
-      state.city = el.city.value;
-      state.ticketFilter = el.ticketFilter.value;
-
-      state.filtered = baseEvents.filter(e=>{
-        const hay = `${e.title} ${e.city} ${e.location} ${e.organizer||""} ${e.excerpt||""} ${e.description||""}`.toLowerCase();
-        const ticketMode = e.ticketing?.mode || "info";
-        return e.date.startsWith(state.currentMonth)
-          && (state.category==="all" || e.category===state.category)
-          && (state.city==="all" || e.city===state.city)
-          && (state.ticketFilter==="all" || ticketMode===state.ticketFilter)
-          && (!state.search || hay.includes(state.search))
-          && quickMatch(e);
-      });
-
-      state.filtered = sortEventsChronologically(state.filtered);
     }
 
     function getEditorialSelection(){
@@ -2617,7 +2442,7 @@ window.addEventListener("DOMContentLoaded", function () {
           <img src="${main.poster||getFallback(main.category)}" alt="${main.title}" onerror="this.src='${getFallback(main.category)}'">
         </div>
         <div class="editorial-main-body">
-          <div class="editorial-kicker">${past ? "Événement terminé" : "Le rendez-vous signature"}</div>
+          <div class="editorial-kicker">${past ? "Événement terminé" : "Rendez-vous stratégique du mois"}</div>
           <div class="tags" style="margin-bottom:10px">${getTicketBadge(main)}</div>
           <h3>${main.title}</h3>
           <div class="editorial-meta">
@@ -2639,7 +2464,7 @@ window.addEventListener("DOMContentLoaded", function () {
             <img src="${e.poster||getFallback(e.category)}" alt="${e.title}" onerror="this.src='${getFallback(e.category)}'">
           </div>
           <div class="editorial-mini-body">
-            <div class="editorial-kicker">À ne pas manquer</div>
+            <div class="editorial-kicker">À suivre</div>
             <div class="tags" style="margin-bottom:8px">${getTicketBadge(e)}</div>
             <h4>${e.title}</h4>
             <p>${e.excerpt||""}</p>
@@ -2872,14 +2697,6 @@ window.addEventListener("DOMContentLoaded", function () {
       setTimeout(()=>{ if(map) map.invalidateSize(); },100);
     }
 
-    const featuredByMonth = {
-      "2026-01":["e1"],
-      "2026-02":["e2","e3"],
-      "2026-03":["e11","e5","e12","e14"],
-      "2026-04":["e7","e8"],
-      "2026-05":["e9","e10"]
-    };
-
     let carouselEvents = [], carouselIdx = 0, carouselTimer = null;
 
     function setHero(){
@@ -2984,9 +2801,9 @@ window.addEventListener("DOMContentLoaded", function () {
       return [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
-        "PRODID:-//Maison Konbit//Agenda//FR",
+        "PRODID:-//Konbit Agency//Agenda//FR",
         "BEGIN:VEVENT",
-        `UID:${event.id}@maison-konbit`,
+        `UID:${event.id}@konbit-agency`,
         `DTSTAMP:${new Date().toISOString().replace(/[-:]/g,"").split(".")[0]}Z`,
         `DTSTART;VALUE=DATE:${start}`,
         `DTEND;VALUE=DATE:${end}`,
@@ -3080,50 +2897,10 @@ window.addEventListener("DOMContentLoaded", function () {
       setHero();
     }
 
-    function reset(){
-      el.search.value = "";
-      el.category.value = "all";
-      el.city.value = "all";
-      el.ticketFilter.value = "all";
-      state.quick = "all";
-      document.querySelectorAll(".topic-chip").forEach(b=>b.classList.remove("active"));
-      const a = document.querySelector('.topic-chip[data-quick="all"]');
-      if(a) a.classList.add("active");
-      apply();
-    }
-
     initSelectedDay();
-    populateCities();
-    populateMonthJump();
     updatePromoCount();
     renderTrainings();
     apply();
-
-    [el.search,el.category,el.city,el.ticketFilter].forEach(n=>{
-      n.addEventListener("input",apply);
-      n.addEventListener("change",apply);
-    });
-
-    if(el.monthJump){
-      el.monthJump.addEventListener("change",()=>{
-        state.currentMonth = el.monthJump.value;
-        const t = getTodayIso();
-        state.selectedDay = t.startsWith(state.currentMonth) ? t : null;
-        apply();
-      });
-    }
-
-    document.querySelectorAll(".topic-chip").forEach(btn=>{
-      btn.onclick=()=>{
-        document.querySelectorAll(".topic-chip").forEach(b=>b.classList.remove("active"));
-        btn.classList.add("active");
-        state.quick = btn.dataset.quick;
-        apply();
-      };
-    });
-
-    const rb = document.getElementById("reset");
-    if(rb) rb.onclick = reset;
 
     const pm = document.getElementById("prevMonth");
     const nm = document.getElementById("nextMonth");
